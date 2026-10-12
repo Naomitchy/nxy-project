@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NXY ｜ NO SEX, NO INTIMACY</title>
+<meta name="description" content="NXYは、誰もが「生まれてきてよかった」と感じられる性愛を社会に実装していくプロジェクトです。" />
+<meta property="og:title" content="NXY ｜ NO SEX, NO INTIMACY" />
+<meta property="og:description" content="―― 誰もが、生まれてきてよかったと感じるセックスを。" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="puzzle-bg.jpg" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          jp: ['"Shippori Mincho"', 'serif']
+        },
+        letterSpacing: {
+          ultra: '0.42em'
+        }
+      }
+    }
+  };
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Shippori Mincho', serif;
+    font-feature-settings: "palt" 1;
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: opacity 900ms cubic-bezier(.16,1,.3,1), transform 900ms cubic-bezier(.16,1,.3,1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+  /* ---------- Hero puzzle layer ---------- */
+  #puzzle-layer { position: absolute; inset: 0; overflow: hidden; }
+  .puzzle-tile {
+    position: absolute;
+    background-repeat: no-repeat;
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+  }
+
+  /* ---------- Editorial details ---------- */
+  .rule-label::before {
+    content: '';
+    display: inline-block;
+    width: 2.75rem;
+    height: 1px;
+    background: #C00000;
+    vertical-align: middle;
+    margin-right: .9rem;
+  }
+  .vline { position: relative; }
+  .vline::before {
+    content: '';
+    position: absolute; left: 0; top: .35em; bottom: .35em;
+    width: 1px; background: #C00000;
+  }
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s ease;
+  }
+  .link-underline:hover { background-size: 100% 1px; }
+
+  .modal-panel {
+    transition: opacity .4s ease, transform .5s cubic-bezier(.16,1,.3,1);
+  }
+  .modal-hidden .modal-panel { opacity: 0; transform: translateY(1.25rem) scale(.985); }
+
+  /* Custom scrollbar inside modals */
+  .modal-scroll::-webkit-scrollbar { width: 6px; }
+  .modal-scroll::-webkit-scrollbar-track { background: transparent; }
+  .modal-scroll::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 9999px; }
+
+  /* Form focus */
+  .field {
+    transition: border-color .35s ease, background-color .35s ease, box-shadow .35s ease;
+  }
+  .field:focus {
+    outline: none;
+    border-color: #C00000;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 1px rgba(192,0,0,.18);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+</style>
+<noscript>
+  <style>
+    .reveal { opacity: 1; transform: none; }
+    #puzzle-fallback { opacity: .5; }
+  </style>
+</noscript>
+</head>
+
+<body class="bg-[#F4F4F2] text-[#1C1C1E] antialiased selection:bg-[#C00000] selection:text-[#F4F4F2]">
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+<header id="site-header" class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#F4F4F2]/80 border-b border-[#D1D1D6]/60 transition-colors duration-500">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="h-16 md:h-20 flex items-center justify-between">
+
+      <a href="#hero" class="font-display text-xl md:text-2xl font-semibold tracking-[0.3em] text-[#1C1C1E] hover:text-[#C00000] transition-colors duration-500">
+        N<span class="text-[#C00000]">X</span>Y
+      </a>
+
+      <nav class="hidden md:block" aria-label="メインナビゲーション">
+        <ul class="flex items-center gap-8 lg:gap-12 font-display text-[11px] lg:text-xs tracking-[0.22em] text-[#1C1C1E]">
+          <li><a href="#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li><a href="#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
+          <li><a href="#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
+          <li>
+            <a href="#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#F4F4F2] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <button id="menu-toggle" type="button"
+              class="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-[7px] group"
+              aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-transform duration-500 ease-out"></span>
+        <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-all duration-500 ease-out"></span>
+        <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-transform duration-500 ease-out"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out bg-[#F4F4F2]/95 backdrop-blur-md border-t border-[#D1D1D6]/0">
+    <nav aria-label="モバイルナビゲーション">
+      <ul class="px-6 py-6 space-y-1 font-display text-sm tracking-[0.25em]">
+        <li><a href="#about" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">ABOUT</a></li>
+        <li><a href="#activities" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">ACTIVITIES</a></li>
+        <li><a href="#journal" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">JOURNAL</a></li>
+        <li><a href="#profile" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">PROFILE</a></li>
+        <li><a href="#contact" class="mobile-link block py-4 text-[#C00000] hover:opacity-70 transition-opacity">CONTACT</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+<!-- =====================================================
+     HERO  ── 「パズルの解体 / 既成概念の脱却」
+====================================================== -->
+<section id="hero" class="relative min-h-screen w-full overflow-hidden flex items-end">
+
+  <!-- 背景：パズル片に分割されたレイヤー（JSで生成） -->
+  <div id="puzzle-stage" class="absolute inset-0 z-0" aria-hidden="true">
+    <div id="puzzle-fallback" class="absolute inset-0 bg-center bg-cover opacity-[0.85]" style="background-image:url('puzzle-bg.jpg');"></div>
+    <div id="puzzle-layer"></div>
+  </div>
+
+  <!-- 余白へ解き放たれる“光”のベール -->
+  <div id="hero-veil" class="absolute inset-0 z-10 pointer-events-none
+              bg-[radial-gradient(130%_100%_at_70%_15%,rgba(244,244,242,0.08)_0%,rgba(244,244,242,0.42)_50%,rgba(244,244,242,0.82)_100%)]"></div>
+  <div class="absolute inset-x-0 bottom-0 h-32 z-10 pointer-events-none bg-gradient-to-b from-transparent to-[#F4F4F2]"></div>
+
+  <!-- HEROコンテンツ -->
+  <div id="hero-content" class="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 pb-12 md:pb-16 lg:pb-20 pt-32">
+    <div class="text-right">
+
+      <p class="rule-label font-display text-xs md:text-base lg:text-lg tracking-[0.4em] text-[#C00000] mb-6 md:mb-8">
+        NXY PROJECT
+      </p>
+
+      <h1 class="font-display font-bold leading-[1.1] tracking-[0.02em] whitespace-nowrap text-[clamp(1rem,6.3vw,5.8rem)] text-[#1C1C1E]">
+        <span class="text-[#C00000]">N</span>O SE<span class="text-[#C00000]">X</span>, NO INTIMAC<span class="text-[#C00000]">Y</span>
+      </h1>
+
+      <p class="mt-2 md:mt-3 whitespace-nowrap font-light tracking-[0.02em] text-[clamp(0.41rem,2.57vw,2.37rem)] text-[#1C1C1E]/90">
+        ―― 誰もが、生まれてきてよかったと感じるセックスを。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<main>
+<!-- =====================================================
+     ABOUT
+====================================================== -->
+<section id="about" class="relative py-28 md:py-40 lg:py-48 scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-16 md:mb-24">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">ABOUT</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%]">
+
+      <!-- 1 -->
+      <article class="mb-20 md:mb-28">
+        <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
+          「スペック」で値踏みしあう、<br class="hidden sm:block" />息苦しい世界。
+        </h3>
+        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
+          <p class="reveal">年収、肩書、容姿、年齢。</p>
+          <p class="reveal">現代のマッチングアプリや結婚相談所が提示するのは、人間を「スペック」として値踏みしあう取引市場だ。</p>
+          <p class="reveal">相手に選ばれるために、筋トレやダイエットをし、自分を着飾り、恋愛婚活市場において「ダメ」だと思う性格や癖を隠す。</p>
+          <p class="reveal vline pl-6 md:pl-8 text-[#C00000] text-base md:text-lg tracking-[0.06em]">「ありのままの自分を愛してほしい」</p>
+          <p class="reveal">そう願うことすら、「わがままだ」「現実を見ろ」「あきらめろ」と世間はあなたを正そうとしてくる。</p>
+          <p class="reveal">さらにいま、私たちの社会は互いへの偏見や警戒心で分断され、普通に生きていては男女が混ざりあうことすら難しい。リスクを恐れるあまり、身体的な触れ合いや心の距離は広がり、生身の人間同士が繋がること自体が困難な時代になっている。</p>
+          <p class="reveal">そこには、生身のあなたが息づく余白も、ありのままを受け入れあう温もりもない。</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="mb-20 md:mb-28">
+        <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
+          そもそも、なぜ性愛や関係性に<br class="hidden sm:block" />これほど息苦しいルールが存在するのか。
+        </h3>
+        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
+          <p class="reveal">進化生物学の視点に立てば、かつて女性が単独で子育てをすることが生存困難だった時代、集団内での庇護や資源（食料）を獲得し、パートナーを引き留めるための適応戦略として「性的快楽」が機能したと言われている。</p>
+          <p class="reveal">さらに人類の歴史において、奪い合いや余計な争いを回避し、集団の秩序を保つために発明された社会システムこそが「一夫一婦制」であり「婚姻制度」だった。</p>
+          <p class="reveal">条件による値踏みも、枠組みによる縛りも、すべてはかつて人類が生存確率を上げるために編み出した「過去の最適解」に過ぎない。</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="mb-20 md:mb-28">
+        <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
+          関係性の答えは、<br class="hidden sm:block" />本当に「自分の中」にあるのだろうか？
+        </h3>
+        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
+          <p class="reveal">だが、問いかけたい。</p>
+          <p class="reveal">DNAに刻まれた古代の生存本能や、過去の社会ルールに従い続けることが、いまの私たちを本当に幸せにしているだろうか。</p>
+          <p class="reveal">関係性の答えは、自分の頭の中（内面）をどれだけ掘り下げても見つからない。世間が提示する「正解のカップル像」にも存在しない。</p>
+          <p class="reveal">答えはいつだって、一対一で向き合った「あなたと相手のあいだ」にしかなく、二人だけのユニークな形を泥臭く探求していくプロセスの中にしか存在しないのだ。</p>
+          <p class="reveal">私たちは、遺伝子の命令に従うだけの生物ではない。</p>
+          <p class="reveal">本能や世間の奴隷になるのをやめ、未知の関係性を二人で創り出していく「新しい進化」の渦中にいる。</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- Statement -->
+    <div class="reveal mt-8 md:mt-16 border-y border-[#D1D1D6] py-16 md:py-24">
+      <div class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%]">
+        <h3 class="font-display text-2xl md:text-4xl font-semibold tracking-[0.1em] mb-10 md:mb-12">
+          <span class="text-[#C00000]">N</span>O SE<span class="text-[#C00000]">X</span>, NO INTIMAC<span class="text-[#C00000]">Y</span>
+        </h3>
+        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
+          <p class="reveal">私たちが探求するのは、綺麗事に包まれた精神論ではない。</p>
+          <p class="reveal">かと言っても、心のない身体の消費権ではない。</p>
+          <p class="reveal">条件で選ぶ世界を捨て、所有しあう契約を疑う。</p>
+          <p class="reveal">スペックという鎧を脱ぎ捨て、むき出しの自分（SEX）で交わり、<br class="hidden md:block" />「生まれてきてよかった」と互いの存在を根底から全肯定しあう深さ（INTIMACY）へ到達する。</p>
+          <p class="reveal">誰かに正される必要なんてない。</p>
+          <p class="reveal text-[#C00000] text-base md:text-lg tracking-[0.06em]">ただ一対一の「個」として深く繋がりあう、新しい関係性の道をここから切り拓く。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT "NXY" -->
+    <div class="mt-20 md:mt-32 grid lg:grid-cols-12 gap-12 lg:gap-16">
+      <div class="lg:col-span-4">
+        <h3 class="reveal font-display text-2xl md:text-3xl font-semibold tracking-[0.14em]">ABOUT &ldquo;NXY&rdquo;</h3>
+        <p class="reveal mt-5 text-sm tracking-[0.18em] text-[#666666]">NXY（エヌ・エックス・ワイ）</p>
+      </div>
+
+      <div class="lg:col-span-8">
+        <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
+          <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group">
+            <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">N</span>
+            <div>
+              <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">No / New</p>
+              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">既存の価値観への「NO」。そこから始まる「New（新しい関係性）」。</p>
+            </div>
+          </li>
+          <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group" style="--reveal-delay:120ms">
+            <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">X</span>
+            <div>
+              <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">SEX / X Chromosome</p>
+              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">生身の身体の交わり、本能、性と生命の根源としての「SEX」と「X染色体」。</p>
+            </div>
+          </li>
+          <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group" style="--reveal-delay:240ms">
+            <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">Y</span>
+            <div>
+              <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">INTIMACY / Y Chromosome</p>
+              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">身体の先にある心と存在の全肯定としての「INTIMACY」と「Y染色体」。</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="reveal mt-10 space-y-5 text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
+          <p>遺伝子や歴史的制度という枠組みを超え、自らの意思（N）で、身体（X）と心（Y）を結び直す。</p>
+          <p>NXYは、誰もが「生まれてきてよかった」と全身で感じられる性愛を社会に実装していくプロジェクトです。</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ACTIVITIES
+====================================================== -->
+<section id="activities" class="relative py-28 md:py-40 lg:py-48 bg-[#EFEFEC] scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-14 md:mb-20">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">ACTIVITIES</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <p class="reveal max-w-[44rem] text-[15px] md:text-base leading-[2.2] font-light text-[#1C1C1E]/85 mb-16 md:mb-24">
+      NXYは、既存の価値観を解体し、新しい男女関係の道を社会に実装するため、多角的な活動を展開しています。
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-px bg-[#D1D1D6] border border-[#D1D1D6]">
+
+      <!-- 1 -->
+      <article class="reveal bg-[#F4F4F2] p-8 md:p-10 lg:p-12 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_50px_-30px_rgba(28,28,30,0.45)]">
+        <span class="font-display text-5xl md:text-6xl leading-none text-[#D1D1D6] mb-8">01</span>
+        <h3 class="font-display text-lg lg:text-xl font-semibold tracking-[0.14em] text-[#C00000] md:min-h-[3.5rem]">RESEARCH &amp; MEDIA</h3>
+        <p class="text-xs tracking-[0.22em] text-[#666666] mt-3 mb-8">探求と発信</p>
+        <dl class="space-y-7 text-[14px] leading-[2.05] font-light text-[#1C1C1E]/85">
+          <div>
+            <dt class="font-medium text-[#1C1C1E] mb-2 tracking-[0.04em]">性愛の歴史・進化生物学の研究</dt>
+            <dd>「なぜ私たちは今の不自然な枠組みに縛られているのか」を歴史的・生物学的観点から紐解き、思想の土台をアップデートし続けます。</dd>
+          </div>
+          <div>
+            <dt class="font-medium text-[#1C1C1E] mb-2 tracking-[0.04em]">取材・発信（Journal）</dt>
+            <dd>現代社会の歪みに対する批評や日々の気づき、現場での対話を思考ログとしてオープンに発信します。</dd>
+          </div>
+        </dl>
+      </article>
+
+      <!-- 2 -->
+      <article class="reveal bg-[#F4F4F2] p-8 md:p-10 lg:p-12 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_50px_-30px_rgba(28,28,30,0.45)]" style="--reveal-delay:140ms">
+        <span class="font-display text-5xl md:text-6xl leading-none text-[#D1D1D6] mb-8">02</span>
+        <h3 class="font-display text-lg lg:text-xl font-semibold tracking-[0.14em] text-[#C00000] md:min-h-[3.5rem]">COACHING SESSIONS</h3>
+        <p class="text-xs tracking-[0.22em] text-[#666666] mt-3 mb-8">個と対の実践</p>
+        <dl class="space-y-7 text-[14px] leading-[2.05] font-light text-[#1C1C1E]/85">
+          <div>
+            <dt class="font-medium text-[#1C1C1E] mb-2 tracking-[0.04em]">パーソナル性愛コーチング（個人向け）</dt>
+            <dd>スペックや世間の理想という鎧を脱ぎ捨て、「ありのままの自分」を取り戻し、自分自身と深く繋がるための1対1の伴走。</dd>
+          </div>
+          <div>
+            <dt class="font-medium text-[#1C1C1E] mb-2 tracking-[0.04em]">カップル性愛コーチング（パートナー向け）</dt>
+            <dd>婚姻制度や契約という外枠に頼らず、むき出しの心と身体で互いを全肯定しあう「Intimacy（親密さ）」を二人で再構築するセッション。</dd>
+          </div>
+        </dl>
+      </article>
+
+      <!-- 3 -->
+      <article class="reveal bg-[#F4F4F2] p-8 md:p-10 lg:p-12 flex flex-col transition-all duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_18px_50px_-30px_rgba(28,28,30,0.45)]" style="--reveal-delay:280ms">
+        <span class="font-display text-5xl md:text-6xl leading-none text-[#D1D1D6] mb-8">03</span>
+        <h3 class="font-display text-lg lg:text-xl font-semibold tracking-[0.14em] text-[#C00000] md:min-h-[3.5rem]">COMMUNITY</h3>
+        <p class="text-xs tracking-[0.22em] text-[#666666] mt-3 mb-8">集いと居場所</p>
+        <dl class="space-y-7 text-[14px] leading-[2.05] font-light text-[#1C1C1E]/85">
+          <div>
+            <dt class="font-medium text-[#1C1C1E] mb-2 tracking-[0.04em]">ワークショップ・対話会</dt>
+            <dd>安心して身体と心を開き、他者との新しい境界線や繋がり方を体感する実践的なライブの場。</dd>
+          </div>
+          <div>
+            <dt class="font-medium text-[#1C1C1E] mb-2 tracking-[0.04em]">NXY コミュニティの設立・運営</dt>
+            <dd>同じ問いを持ち、「ありのままの自分」でいられる人々が集う安心のサードプレイス。セッションやワークショップで得た気づきを日常で実践し、仲間とともに新しい関係性の文化を育んでいくコミュニティ。</dd>
+          </div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     JOURNAL
+====================================================== -->
+<section id="journal" class="relative py-28 md:py-40 lg:py-48 scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-14 md:mb-20">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">JOURNAL</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="max-w-[44rem] mb-16 md:mb-20">
+      <p class="reveal text-lg md:text-2xl font-light tracking-[0.08em] mb-7">生々しく、可笑しく、美しく。日々の思索と対話の記録。</p>
+      <p class="reveal text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
+        NXYが探求する性愛や親密さ（Intimacy）についての考察、現代社会への問いかけ、現場で生まれたリアルな気づきを公式Noteにて更新しています。
+      </p>
+    </div>
+
+    <!-- 最新記事3件（公式NoteのRSSから自動取得） -->
+    <div id="journal-list" class="grid md:grid-cols-3 gap-8 lg:gap-10" aria-busy="true" aria-live="polite"></div>
+
+    <p id="journal-status" class="reveal mt-10 text-[11px] tracking-[0.12em] text-[#666666]">
+      公式NoteのRSSから最新記事を読み込んでいます…
+    </p>
+
+    <div class="reveal mt-12 md:mt-16 flex justify-center">
+      <a href="https://note.com/gifted_holly763" target="_blank" rel="noopener noreferrer"
+         class="group inline-flex items-center gap-5 border border-[#1C1C1E] px-10 md:px-14 py-5 font-display text-xs tracking-[0.28em]
+                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] hover:-translate-y-1 transition-all duration-500">
+        VIEW ALL ARTICLES
+        <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8599;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     PROFILE
+====================================================== -->
+<section id="profile" class="relative py-28 md:py-40 lg:py-48 bg-[#EFEFEC] scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-14 md:mb-20">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">PROFILE</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+      <!-- 左：ポートレート -->
+      <figure class="reveal lg:col-span-4 flex flex-col items-center lg:items-start">
+        <div class="relative w-40 sm:w-48 lg:w-52 xl:w-56">
+          <span aria-hidden="true" class="absolute -inset-3 rounded-full border border-[#C00000]/35"></span>
+          <div class="relative aspect-square rounded-full overflow-hidden bg-[#F4F4F2]">
+            <img src="profile.jpg" alt="NXY代表 星野直道のポートレート" loading="lazy" decoding="async"
+                 class="w-full h-full object-cover object-top origin-top scale-[1.28] grayscale-[18%] hover:grayscale-0 transition-[filter] duration-700" />
+          </div>
+        </div>
+        <figcaption class="mt-7 font-display text-[11px] tracking-[0.26em] text-[#666666]">NAOMICHI HOSHINO</figcaption>
+      </figure>
+
+      <!-- 右：プロフィール -->
+      <div class="reveal lg:col-span-8 text-center lg:text-left" style="--reveal-delay:160ms">
+        <h3 class="text-2xl md:text-3xl font-medium tracking-[0.1em] leading-[1.6]">星野 直道</h3>
+
+        <p class="mt-5 inline-block border-l-2 border-[#C00000] pl-4 text-left text-sm md:text-base tracking-[0.08em] text-[#C00000]">
+          NXY 代表 ／ 性愛の活動家（Sex Activist）
+        </p>
+
+        <p class="mt-8 text-[15px] md:text-lg leading-[2.1] font-light tracking-[0.04em] text-[#1C1C1E]/90">
+          誰もが生まれてきてよかったと愛を感じるSEXのために、道なき場所に道をつくる。生々しく、可笑しく、美しく。性の課題や人間の業をなきものにせず、新しい男女関係の道を切り拓く活動をしています。
+        </p>
+
+        <dl class="mt-10 flex flex-col sm:flex-row sm:items-center justify-center lg:justify-start gap-3 sm:gap-8 border-t border-[#D1D1D6] pt-7">
+          <dt class="font-display text-[11px] tracking-[0.25em] text-[#666666] shrink-0">CERTIFICATION</dt>
+          <dd class="text-[14px] tracking-[0.06em] font-light">ICF認定ACC ／ CTI認定CPCC</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+====================================================== -->
+<section id="contact" class="relative py-28 md:py-40 lg:py-48 scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-14 md:mb-20">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">CONTACT</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+
+      <div class="lg:col-span-5">
+        <p class="reveal text-lg md:text-2xl font-light leading-[1.9] tracking-[0.08em] mb-8">
+          一対一の対話から、<br />新しい関係性を始めよう。
+        </p>
+        <p class="reveal text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
+          パーソナル・カップルコーチングのお申し込み、ワークショップ・コミュニティへの参加問い合わせ、メディア取材やコラボレーションのご相談は、右記フォームよりお気軽にご連絡ください。
+        </p>
+
+        <div class="reveal mt-12 border-l-2 border-[#C00000] bg-[#EFEFEC] p-7 md:p-8" style="--reveal-delay:120ms">
+          <p class="font-display text-[11px] md:text-xs tracking-[0.28em] text-[#C00000] mb-4">FIRST DIALOGUE</p>
+          <h3 class="text-lg md:text-xl font-medium tracking-[0.08em] leading-[1.7] mb-6">はじめの60分</h3>
+
+          <div class="space-y-5 text-[14px] leading-[2.1] font-light text-[#1C1C1E]/85">
+            <p>性のことを、誰かに話したことはありますか。</p>
+            <p>コーチングやプログラムのお申し込みの前に、60分の対話の時間をご用意しています。話す内容は決まっていません。いま抱えている違和感、言葉にならない感覚、誰にも言えなかったこと。何も整理されていないままで構いません。</p>
+            <p>お互いが合うかどうかを確かめるための時間でもあります。この時間に売り込みはしません。</p>
+          </div>
+
+          <dl class="mt-7 pt-6 border-t border-[#D1D1D6] grid grid-cols-[5.5rem_1fr] gap-y-3 text-[13px] leading-[1.9]">
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">TIME</dt>
+            <dd class="font-light">60分</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">STYLE</dt>
+            <dd class="font-light">オンライン（ビデオ通話）</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">FEE</dt>
+            <dd class="font-light">無料</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">LIMIT</dt>
+            <dd class="font-light">月3名限定／18歳以上の方</dd>
+          </dl>
+
+          <p class="mt-6 text-[12px] leading-[1.95] text-[#666666]">
+            お話しいただいた内容は、ICF倫理規程に準じて厳守します。性的なサービスの提供や、医療・治療行為ではありません。
+          </p>
+
+          <p class="mt-6 text-[13px] tracking-[0.04em]">
+            ご希望の方は、フォームのお問い合わせ種別で「<span class="text-[#C00000]">はじめの60分（無料対話）</span>」を選択してください。
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal lg:col-span-7 lg:self-end" style="--reveal-delay:140ms">
+        <form action="https://ssgform.com/s/7TlxBKLY5ybO" method="POST" class="space-y-9">
+
+          <div>
+            <label for="field-name" class="block font-display text-[11px] tracking-[0.25em] text-[#666666] mb-3">
+              NAME <span class="text-[#C00000] ml-2">お名前 *</span>
+            </label>
+            <input id="field-name" type="text" name="お名前" required autocomplete="name"
+                   class="field w-full bg-transparent border-b border-[#D1D1D6] py-3 text-[15px] tracking-[0.04em] placeholder:text-[#666666]/50"
+                   placeholder="山田 花子" />
+          </div>
+
+          <div>
+            <label for="field-email" class="block font-display text-[11px] tracking-[0.25em] text-[#666666] mb-3">
+              E-MAIL <span class="text-[#C00000] ml-2">メールアドレス *</span>
+            </label>
+            <input id="field-email" type="email" name="メールアドレス" required autocomplete="email"
+                   class="field w-full bg-transparent border-b border-[#D1D1D6] py-3 text-[15px] tracking-[0.04em] placeholder:text-[#666666]/50"
+                   placeholder="example@mail.com" />
+          </div>
+
+          <div>
+            <label for="field-type" class="block font-display text-[11px] tracking-[0.25em] text-[#666666] mb-3">
+              SUBJECT <span class="text-[#C00000] ml-2">お問い合わせ種別</span>
+            </label>
+            <div class="relative">
+              <select id="field-type" name="お問い合わせ種別"
+                      class="field w-full appearance-none bg-transparent border-b border-[#D1D1D6] py-3 pr-10 text-[15px] tracking-[0.04em] cursor-pointer">
+                <option value="はじめの60分（無料対話）">はじめの60分（無料対話）</option>
+                <option value="パーソナルコーチング">パーソナルコーチング</option>
+                <option value="カップルコーチング">カップルコーチング</option>
+                <option value="ワークショップ・対話会">ワークショップ・対話会</option>
+                <option value="コミュニティ">コミュニティ</option>
+                <option value="取材・その他">取材・その他</option>
+              </select>
+              <span aria-hidden="true" class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-[#C00000] text-xs">&#9662;</span>
+            </div>
+          </div>
+
+          <div>
+            <label for="field-message" class="block font-display text-[11px] tracking-[0.25em] text-[#666666] mb-3">
+              MESSAGE <span class="text-[#C00000] ml-2">お問い合わせ内容 *</span>
+            </label>
+            <textarea id="field-message" name="お問い合わせ内容" required rows="7"
+                      class="field w-full bg-transparent border border-[#D1D1D6] p-4 text-[15px] leading-[2] tracking-[0.04em] placeholder:text-[#666666]/50 resize-y"
+                      placeholder="ご相談の背景や、いま感じていることを自由にお書きください。"></textarea>
+          </div>
+
+          <p class="text-[12px] leading-[1.9] text-[#666666]">
+            送信前に<button type="button" class="js-open-modal text-[#C00000] link-underline" data-modal="modal-privacy">プライバシーポリシー</button>をご確認ください。いただいた内容はご返信とサービス提供の目的にのみ使用します。
+          </p>
+
+          <button type="submit"
+                  class="group w-full md:w-auto inline-flex items-center justify-center gap-5 bg-[#C00000] text-[#F4F4F2] px-14 py-5
+                         font-display text-xs tracking-[0.3em] hover:bg-[#1C1C1E] hover:-translate-y-1
+                         transition-all duration-500 shadow-[0_14px_40px_-24px_rgba(192,0,0,0.9)]">
+            SEND MESSAGE
+            <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="border-t border-[#D1D1D6] bg-[#F4F4F2]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-14 md:py-20">
+
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+      <div>
+        <a href="#hero" class="font-display text-2xl font-semibold tracking-[0.3em] hover:text-[#C00000] transition-colors duration-500">
+          N<span class="text-[#C00000]">X</span>Y
+        </a>
+        <p class="mt-4 text-[12px] tracking-[0.14em] text-[#666666] leading-[2]">
+          ―― 誰もが、生まれてきてよかったと感じるセックスを。
+        </p>
+      </div>
+
+      <nav aria-label="フッターナビゲーション">
+        <ul class="flex flex-wrap gap-x-8 gap-y-4 font-display text-[11px] tracking-[0.22em] text-[#666666]">
+          <li><a href="#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li><a href="#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
+          <li><a href="#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
+          <li><a href="#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
+          <li>
+            <a href="https://note.com/gifted_holly763" target="_blank" rel="noopener noreferrer" class="link-underline hover:text-[#C00000]">NOTE &#8599;</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-[#D1D1D6] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+      <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">&copy; NXY All Rights Reserved.</p>
+      <div class="flex flex-wrap items-center gap-x-7 gap-y-3 text-[12px] tracking-[0.08em] text-[#666666]">
+        <button type="button" class="js-open-modal hover:text-[#C00000] transition-colors duration-500 link-underline" data-modal="modal-tokusho">特定商取引法に基づく表記</button>
+        <span aria-hidden="true" class="hidden sm:block w-px h-3 bg-[#D1D1D6]"></span>
+        <button type="button" class="js-open-modal hover:text-[#C00000] transition-colors duration-500 link-underline" data-modal="modal-privacy">プライバシーポリシー</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- =====================================================
+     MODAL : 特定商取引法に基づく表記
+====================================================== -->
+<div id="modal-tokusho" class="modal modal-hidden fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="modal-tokusho-title">
+  <div class="modal-overlay absolute inset-0 bg-[#1C1C1E]/60 backdrop-blur-sm"></div>
+  <div class="relative h-full w-full flex items-center justify-center p-4 md:p-8">
+    <div class="modal-panel relative w-full max-w-3xl max-h-[85vh] bg-[#F4F4F2] border border-[#D1D1D6] shadow-[0_40px_120px_-40px_rgba(28,28,30,.6)] flex flex-col">
+
+      <div class="flex items-start justify-between gap-6 px-7 md:px-12 pt-9 pb-6 border-b border-[#D1D1D6]">
+        <div>
+          <p class="font-display text-[10px] tracking-[0.3em] text-[#C00000] mb-3">LEGAL</p>
+          <h2 id="modal-tokusho-title" class="text-lg md:text-2xl font-medium tracking-[0.06em]">特定商取引法に基づく表記</h2>
+        </div>
+        <button type="button" class="js-close-modal shrink-0 w-10 h-10 flex items-center justify-center border border-[#D1D1D6] hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] transition-all duration-500" aria-label="閉じる">
+          <span aria-hidden="true" class="text-lg leading-none">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-scroll overflow-y-auto px-7 md:px-12 py-8">
+        <dl class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6] text-[14px] leading-[2]">
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">屋号／事業者名</dt>
+            <dd class="font-light text-[#1C1C1E]/85">NXY</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">代表責任者</dt>
+            <dd class="font-light text-[#1C1C1E]/85">星野 直道</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">所在地</dt>
+            <dd class="font-light text-[#1C1C1E]/85">千葉県柏市柏の葉2-5-9</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">電話番号</dt>
+            <dd class="font-light text-[#1C1C1E]/85">請求があったときは遅滞なく開示いたします。お問い合わせフォームよりご連絡ください。</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">メールアドレス</dt>
+            <dd class="font-light text-[#1C1C1E]/85">hoshino.naomichi@gmail.com</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">販売価格</dt>
+            <dd class="font-light text-[#1C1C1E]/85">各サービスの価格は、ご相談内容・形式・回数に応じた個別のお見積もりです。お問い合わせ後、内容に応じた金額（税込）をメールにてご提示し、ご承諾をいただいてからお申し込み・ご入金となります。価格表の掲載は準備中です。</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">商品代金以外の必要料金</dt>
+            <dd class="font-light text-[#1C1C1E]/85">銀行振込手数料、通信にかかる費用、対面開催時の会場までの交通費等はお客様のご負担となります。</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">支払方法</dt>
+            <dd class="font-light text-[#1C1C1E]/85">銀行振込、またはお申し込み時にご案内する決済サービスによるお支払い。</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">支払時期</dt>
+            <dd class="font-light text-[#1C1C1E]/85">お申し込み確定後、当方が指定する期日までにお支払いいただきます（原則としてサービス提供開始前）。</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">サービス提供時期</dt>
+            <dd class="font-light text-[#1C1C1E]/85">ご入金の確認後、お客様と調整のうえ決定した日時より提供を開始します。</dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">キャンセル・返金規定</dt>
+            <dd class="font-light text-[#1C1C1E]/85">
+              役務の性質上、提供開始後のご返金は承っておりません。日程変更は開催日の前々日までにご連絡いただいた場合、1回に限り無償で承ります。前日・当日のキャンセルは実施扱いとさせていただきます。やむを得ない事由により当方からサービスを提供できない場合は、全額をご返金いたします。
+            </dd>
+          </div>
+          <div class="py-5 sm:flex sm:gap-8">
+            <dt class="sm:w-52 shrink-0 font-medium tracking-[0.06em] mb-2 sm:mb-0">動作環境</dt>
+            <dd class="font-light text-[#1C1C1E]/85">オンライン実施の場合、インターネット接続環境およびビデオ通話が可能な端末をご用意ください。</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="px-7 md:px-12 py-6 border-t border-[#D1D1D6] flex justify-end">
+        <button type="button" class="js-close-modal font-display text-[11px] tracking-[0.28em] border border-[#1C1C1E] px-10 py-3 hover:bg-[#1C1C1E] hover:text-[#F4F4F2] transition-all duration-500">CLOSE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- =====================================================
+     MODAL : プライバシーポリシー
+====================================================== -->
+<div id="modal-privacy" class="modal modal-hidden fixed inset-0 z-[100] hidden" role="dialog" aria-modal="true" aria-labelledby="modal-privacy-title">
+  <div class="modal-overlay absolute inset-0 bg-[#1C1C1E]/60 backdrop-blur-sm"></div>
+  <div class="relative h-full w-full flex items-center justify-center p-4 md:p-8">
+    <div class="modal-panel relative w-full max-w-3xl max-h-[85vh] bg-[#F4F4F2] border border-[#D1D1D6] shadow-[0_40px_120px_-40px_rgba(28,28,30,.6)] flex flex-col">
+
+      <div class="flex items-start justify-between gap-6 px-7 md:px-12 pt-9 pb-6 border-b border-[#D1D1D6]">
+        <div>
+          <p class="font-display text-[10px] tracking-[0.3em] text-[#C00000] mb-3">LEGAL</p>
+          <h2 id="modal-privacy-title" class="text-lg md:text-2xl font-medium tracking-[0.06em]">プライバシーポリシー</h2>
+        </div>
+        <button type="button" class="js-close-modal shrink-0 w-10 h-10 flex items-center justify-center border border-[#D1D1D6] hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] transition-all duration-500" aria-label="閉じる">
+          <span aria-hidden="true" class="text-lg leading-none">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-scroll overflow-y-auto px-7 md:px-12 py-8 text-[14px] leading-[2.05] font-light text-[#1C1C1E]/85">
+        <p>NXY（以下「当方」）は、お客様の個人情報を適切に保護することが社会的責務であると考え、個人情報の保護に関する法律その他の関係法令を遵守し、以下のとおりプライバシーポリシーを定めます。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">1. 取得する情報</h3>
+        <p>お問い合わせフォーム、サービスのお申し込み、各種プログラムへのご参加にあたり、お名前、メールアドレス、お問い合わせ種別、ご相談内容等の情報を取得します。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">2. 利用目的</h3>
+        <ul class="list-disc pl-5 space-y-2 marker:text-[#C00000]">
+          <li>お問い合わせへの回答およびご連絡のため</li>
+          <li>コーチング、ワークショップ、コミュニティ等のサービス提供および運営のため</li>
+          <li>サービスに関するご案内、重要なお知らせの送付のため</li>
+          <li>個人を特定できない形での統計データ作成およびサービス改善のため</li>
+        </ul>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">3. 第三者提供</h3>
+        <p>当方は、次の場合を除き、ご本人の同意なく個人情報を第三者に提供しません。</p>
+        <ul class="list-disc pl-5 space-y-2 marker:text-[#C00000] mt-3">
+          <li>法令に基づく場合</li>
+          <li>人の生命、身体または財産の保護のために必要があり、ご本人の同意を得ることが困難な場合</li>
+          <li>国の機関等の法令で定める事務の遂行に協力する必要がある場合</li>
+        </ul>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">4. 業務委託</h3>
+        <p>利用目的の達成に必要な範囲で、フォーム運用やメール配信等の業務を外部に委託する場合があります。その際は、委託先に対して適切な監督を行います。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">5. 守秘義務（セッション内容の取り扱い）</h3>
+        <p>コーチングおよびワークショップにおいて知り得たお客様の情報は、国際コーチング連盟（ICF）倫理規程に準じ、厳格に秘密として保持します。ただし、ご本人または第三者の生命・身体に重大な危険が及ぶおそれがある場合、および法令に基づき開示が求められる場合はこの限りではありません。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">6. 安全管理措置</h3>
+        <p>個人情報の漏えい、滅失または毀損の防止その他の安全管理のため、必要かつ適切な措置を講じます。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">7. Cookie・アクセス解析</h3>
+        <p>本サイトでは、利便性の向上およびアクセス状況の把握のためにCookieを利用する場合があります。これらにより個人を特定する情報を取得することはありません。Cookieの利用はブラウザの設定により無効化できます。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">8. 開示・訂正・削除</h3>
+        <p>ご本人から個人情報の開示、訂正、利用停止、削除のお申し出があった場合は、ご本人であることを確認のうえ、合理的な期間内に対応いたします。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">9. 本ポリシーの変更</h3>
+        <p>法令の改正やサービス内容の変更に応じて、本ポリシーを改定することがあります。改定後の内容は本ページに掲載した時点から効力を生じます。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">10. お問い合わせ窓口</h3>
+        <p>NXY　代表：星野 直道<br />所在地：千葉県柏市柏の葉2-5-9<br />メール：hoshino.naomichi@gmail.com</p>
+      </div>
+
+      <div class="px-7 md:px-12 py-6 border-t border-[#D1D1D6] flex justify-end">
+        <button type="button" class="js-close-modal font-display text-[11px] tracking-[0.28em] border border-[#1C1C1E] px-10 py-3 hover:bg-[#1C1C1E] hover:text-[#F4F4F2] transition-all duration-500">CLOSE</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  'use strict';
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* =========================================================
+     1. HERO ── パズル解体演出
+     画像を格子状のピースに切り分け、スクロール／ポインタ量に応じて
+     「はまっていた枠組み」が外れ、余白へ散っていくように見せる。
+  ========================================================== */
+  var hero          = document.getElementById('hero');
+  var stage         = document.getElementById('puzzle-stage');
+  var layer         = document.getElementById('puzzle-layer');
+  var fallback      = document.getElementById('puzzle-fallback');
+  var heroContent   = document.getElementById('hero-content');
+  var IMG_SRC       = 'puzzle-bg.jpg';
+  var IMG_RATIO     = 16 / 9;   // 実寸読込後に上書き
+  var tiles         = [];
+  var cols          = 9;
+  var rows          = 5;
+
+  function seededRandom(seed) {
+    var s = Math.sin(seed * 12.9898 + 78.233) * 43758.5453;
+    return s - Math.floor(s);
+  }
+
+  function buildTiles() {
+    if (!layer) return;
+    layer.innerHTML = '';
+    tiles = [];
+
+    var w = hero.clientWidth;
+    var h = hero.clientHeight;
+    if (!w || !h) return;
+
+    cols = w < 640 ? 5 : (w < 1024 ? 7 : 9);
+    rows = w < 640 ? 7 : (w < 1024 ? 6 : 5);
+
+    // cover 相当の背景寸法を算出
+    var bgW, bgH;
+    if (w / h > IMG_RATIO) { bgW = w; bgH = w / IMG_RATIO; }
+    else                   { bgH = h; bgW = h * IMG_RATIO; }
+    var ox = (w - bgW) / 2;
+    var oy = (h - bgH) / 2;
+
+    var tw = w / cols;
+    var th = h / rows;
+    var cx = (cols - 1) / 2;
+    var cy = (rows - 1) / 2;
+
+    for (var r = 0; r < rows; r++) {
+      for (var c = 0; c < cols; c++) {
+        var el = document.createElement('div');
+        el.className = 'puzzle-tile';
+        el.style.left   = (c * tw) + 'px';
+        el.style.top    = (r * th) + 'px';
+        el.style.width  = Math.ceil(tw) + 'px';
+        el.style.height = Math.ceil(th) + 'px';
+        el.style.backgroundImage = "url('" + IMG_SRC + "')";
+        el.style.backgroundSize  = bgW + 'px ' + bgH + 'px';
+        el.style.backgroundPosition = (ox - c * tw) + 'px ' + (oy - r * th) + 'px';
+
+        var seed = r * cols + c + 1;
+        var rndA = seededRandom(seed);
+        var rndB = seededRandom(seed + 101);
+        var rndC = seededRandom(seed + 303);
+
+        // 中心から外へ押し出すベクトル ＋ ゆらぎ
+        var dirX = (c - cx) / (cx || 1);
+        var dirY = (r - cy) / (cy || 1);
+        var dist = Math.min(1, Math.sqrt(dirX * dirX + dirY * dirY) / 1.414 + 0.12);
+
+        tiles.push({
+          el: el,
+          dx: dirX * (180 + rndA * 420) + (rndB - 0.5) * 160,
+          dy: dirY * (150 + rndB * 360) + (rndC - 0.5) * 140,
+          rot: (rndA - 0.5) * 46,
+          blur: 3 + rndC * 11,
+          lag: 0.42 + dist * 0.58,        // 外側ほど早く外れる
+          fade: 0.55 + rndB * 0.45,
+          px: (rndA - 0.5) * 26,          // ポインタ追従量
+          py: (rndC - 0.5) * 22
+        });
+        layer.appendChild(el);
+      }
+    }
+    if (fallback) fallback.style.opacity = '0';
+  }
+
+  var scrollP  = 0;   // 0〜1：スクロール解体進行度
+  var pointerX = 0, pointerY = 0;
+  var curP = 0, curPX = 0, curPY = 0;
+  var rafId = null;
+
+  function readScroll() {
+    var hh = hero ? hero.offsetHeight : window.innerHeight;
+    scrollP = Math.min(1, Math.max(0, window.pageYOffset / (hh * 0.92)));
+  }
+
+  function renderHero() {
+    curP  += (scrollP  - curP)  * 0.09;
+    curPX += (pointerX - curPX) * 0.07;
+    curPY += (pointerY - curPY) * 0.07;
+
+    var p = curP;
+    var ease = p * p * (3 - 2 * p); // smoothstep
+
+    for (var i = 0; i < tiles.length; i++) {
+      var t = tiles[i];
+      var local = Math.min(1, ease * t.lag * 1.35);
+      // ポインタ量は解体前ほど控えめに効かせ、静かな予兆をつくる
+      var hover = (1 - local * 0.65);
+      var x = t.dx * local + t.px * curPX * hover;
+      var y = t.dy * local + t.py * curPY * hover;
+      t.el.style.transform =
+        'translate3d(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,0) rotate(' +
+        (t.rot * local).toFixed(2) + 'deg) scale(' + (1 + 0.18 * local).toFixed(3) + ')';
+      t.el.style.opacity = Math.max(0, 1 - local * t.fade * 1.35).toFixed(3);
+      t.el.style.filter  = 'blur(' + (t.blur * local).toFixed(2) + 'px)';
+    }
+
+    if (stage) {
+      stage.style.opacity = (0.92 - ease * 0.72).toFixed(3);
+      stage.style.transform = 'scale(' + (1 + ease * 0.08).toFixed(4) + ')';
+    }
+    if (heroContent) {
+      heroContent.style.transform = 'translate3d(0,' + (-ease * 46).toFixed(2) + 'px,0)';
+      heroContent.style.opacity = Math.max(0, 1 - ease * 1.15).toFixed(3);
+    }
+
+    rafId = window.requestAnimationFrame(renderHero);
+  }
+
+  function initHero() {
+    if (!hero || !layer) return;
+
+    var probe = new Image();
+    probe.onload = function () {
+      if (probe.naturalWidth && probe.naturalHeight) {
+        IMG_RATIO = probe.naturalWidth / probe.naturalHeight;
+      }
+      buildTiles();
+    };
+    probe.onerror = function () { buildTiles(); };
+    probe.src = IMG_SRC;
+
+    if (reduceMotion) {
+      if (stage) stage.style.opacity = '0.85';
+      return;
+    }
+
+    readScroll();
+    curP = scrollP;
+    rafId = window.requestAnimationFrame(renderHero);
+
+    window.addEventListener('scroll', readScroll, { passive: true });
+
+    window.addEventListener('pointermove', function (e) {
+      pointerX = (e.clientX / window.innerWidth) * 2 - 1;
+      pointerY = (e.clientY / window.innerHeight) * 2 - 1;
+    }, { passive: true });
+
+    window.addEventListener('touchmove', function (e) {
+      if (!e.touches || !e.touches.length) return;
+      pointerX = (e.touches[0].clientX / window.innerWidth) * 2 - 1;
+      pointerY = (e.touches[0].clientY / window.innerHeight) * 2 - 1;
+    }, { passive: true });
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(function () {
+        buildTiles();
+        readScroll();
+      }, 220);
+    });
+
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        if (rafId) { window.cancelAnimationFrame(rafId); rafId = null; }
+      } else if (!rafId) {
+        rafId = window.requestAnimationFrame(renderHero);
+      }
+    });
+  }
+  initHero();
+
+
+  /* =========================================================
+     2. Scroll Reveal
+  ========================================================== */
+  var revealObserver = null;
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+  }
+
+  function observeReveals(scope) {
+    (scope || document).querySelectorAll('.reveal:not(.is-visible)').forEach(function (el) {
+      if (revealObserver) revealObserver.observe(el);
+      else el.classList.add('is-visible');
+    });
+  }
+  observeReveals();
+
+
+  /* =========================================================
+     3. JOURNAL ── 公式NoteのRSSから最新3件を描画
+     note.com は CORS ヘッダを返さないため、公開プロキシを順に試行する。
+  ========================================================== */
+  var NOTE_URL    = 'https://note.com/gifted_holly763';
+  var NOTE_RSS    = NOTE_URL + '/rss';
+  var FEED_COUNT  = 3;
+  var FEED_TIMEOUT = 8000;
+
+  var journalList   = document.getElementById('journal-list');
+  var journalStatus = document.getElementById('journal-status');
+
+  function el(tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text != null) node.textContent = text;
+    return node;
+  }
+
+  function formatDate(d) {
+    var p = function (n) { return String(n).padStart(2, '0'); };
+    return d.getFullYear() + '.' + p(d.getMonth() + 1) + '.' + p(d.getDate());
+  }
+
+  function stripHtml(html) {
+    var doc = new DOMParser().parseFromString(String(html || ''), 'text/html');
+    return (doc.body.textContent || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function normalizeItem(raw) {
+    var link = String(raw.link || '').trim();
+    var date = new Date(String(raw.pubDate || '').trim().replace(' ', 'T'));
+    var summary = stripHtml(raw.description);
+
+    return {
+      title: String(raw.title || '').trim() || '(無題)',
+      // note.com 以外のURLはリンク先として採用しない
+      link: /^https:\/\/note\.com\//.test(link) ? link : NOTE_URL,
+      date: isNaN(date.getTime()) ? null : date,
+      category: String(raw.category || 'NOTE').trim().toUpperCase() || 'NOTE',
+      summary: summary.length > 92 ? summary.slice(0, 92) + '…' : summary
+    };
+  }
+
+  function parseRssXml(xmlText) {
+    var doc = new DOMParser().parseFromString(String(xmlText || ''), 'application/xml');
+    if (doc.getElementsByTagName('parsererror').length) return [];
+
+    return Array.prototype.map.call(doc.getElementsByTagName('item'), function (item) {
+      var pick = function (tag) {
+        var n = item.getElementsByTagName(tag)[0];
+        return n ? n.textContent : '';
+      };
+      return normalizeItem({
+        title: pick('title'),
+        link: pick('link'),
+        pubDate: pick('pubDate'),
+        category: pick('category'),
+        description: pick('description')
+      });
+    });
+  }
+
+  var FEED_SOURCES = [
+    {
+      url: function (rss) { return 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(rss); },
+      parse: function (text) {
+        var data = JSON.parse(text);
+        if (!data || data.status !== 'ok' || !Array.isArray(data.items)) return [];
+        return data.items.map(function (it) {
+          return normalizeItem({
+            title: it.title,
+            link: it.link,
+            pubDate: it.pubDate,
+            category: it.categories && it.categories[0],
+            description: it.description
+          });
+        });
+      }
+    },
+    {
+      url: function (rss) { return 'https://api.allorigins.win/get?url=' + encodeURIComponent(rss); },
+      parse: function (text) { return parseRssXml((JSON.parse(text) || {}).contents); }
+    },
+    {
+      url: function (rss) { return 'https://api.allorigins.win/raw?url=' + encodeURIComponent(rss); },
+      parse: parseRssXml
+    }
+  ];
+
+  function renderSkeletons() {
+    journalList.innerHTML = '';
+    for (var i = 0; i < FEED_COUNT; i++) {
+      var sk = el('div', 'border-t border-[#D1D1D6] pt-7 animate-pulse');
+      sk.appendChild(el('div', 'h-3 w-32 bg-[#D1D1D6] mb-7'));
+      sk.appendChild(el('div', 'h-5 w-full bg-[#D1D1D6] mb-3'));
+      sk.appendChild(el('div', 'h-5 w-2/3 bg-[#D1D1D6] mb-7'));
+      sk.appendChild(el('div', 'h-3 w-full bg-[#D1D1D6]/70 mb-2'));
+      sk.appendChild(el('div', 'h-3 w-5/6 bg-[#D1D1D6]/70'));
+      journalList.appendChild(sk);
+    }
+  }
+
+  function renderArticles(items) {
+    journalList.innerHTML = '';
+
+    items.forEach(function (item, i) {
+      var card = el('article', 'reveal group border-t border-[#1C1C1E] pt-7 flex flex-col transition-transform duration-500 hover:-translate-y-1');
+      card.style.setProperty('--reveal-delay', (i * 140) + 'ms');
+
+      var meta = el('div', 'flex items-center gap-4 text-[11px] tracking-[0.22em] text-[#666666] mb-6');
+      var time = el('time', null, item.date ? formatDate(item.date) : '');
+      if (item.date) time.dateTime = item.date.toISOString().slice(0, 10);
+      meta.appendChild(time);
+      meta.appendChild(el('span', 'w-px h-3 bg-[#D1D1D6]'));
+      meta.appendChild(el('span', 'font-display text-[#C00000]', item.category));
+      card.appendChild(meta);
+
+      card.appendChild(el('h3', 'text-lg md:text-xl font-medium leading-[1.85] tracking-[0.04em] mb-5 group-hover:text-[#C00000] transition-colors duration-500', item.title));
+      card.appendChild(el('p', 'text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-8 flex-1', item.summary));
+
+      var link = el('a', 'inline-flex items-center gap-3 font-display text-[11px] tracking-[0.25em] text-[#1C1C1E] hover:text-[#C00000] transition-colors duration-500', 'READ ON NOTE');
+      link.href = item.link;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      var dash = el('span', 'inline-block w-8 h-px bg-current transition-all duration-500 group-hover:w-12');
+      dash.setAttribute('aria-hidden', 'true');
+      link.appendChild(dash);
+      card.appendChild(link);
+
+      journalList.appendChild(card);
+    });
+
+    journalList.setAttribute('aria-busy', 'false');
+    observeReveals(journalList);
+  }
+
+  function renderFeedError() {
+    journalList.innerHTML = '';
+    journalList.setAttribute('aria-busy', 'false');
+
+    var box = el('div', 'md:col-span-3 border-t border-[#1C1C1E] pt-7');
+    box.appendChild(el('p', 'text-[15px] leading-[2.05] font-light text-[#1C1C1E]/85 mb-5',
+      '最新記事を自動取得できませんでした。公式Noteから直接ご覧ください。'));
+    var a = el('a', 'inline-flex items-center gap-3 font-display text-[11px] tracking-[0.25em] text-[#C00000]', 'OPEN NOTE');
+    a.href = NOTE_URL;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    box.appendChild(a);
+    journalList.appendChild(box);
+  }
+
+  function fetchWithTimeout(url) {
+    if (typeof AbortController !== 'function') return fetch(url, { cache: 'no-store' });
+    var ctrl = new AbortController();
+    var timer = window.setTimeout(function () { ctrl.abort(); }, FEED_TIMEOUT);
+    return fetch(url, { cache: 'no-store', signal: ctrl.signal })
+      .finally(function () { window.clearTimeout(timer); });
+  }
+
+  function fetchFeed() {
+    var index = 0;
+
+    function attempt() {
+      if (index >= FEED_SOURCES.length) return Promise.resolve(null);
+      var source = FEED_SOURCES[index++];
+
+      return fetchWithTimeout(source.url(NOTE_RSS))
+        .then(function (res) { return res.ok ? res.text() : Promise.reject(new Error('HTTP ' + res.status)); })
+        .then(function (text) {
+          var items = source.parse(text).filter(function (i) { return i.title; });
+          return items.length ? items.slice(0, FEED_COUNT) : attempt();
+        })
+        .catch(attempt);
+    }
+    return attempt();
+  }
+
+  if (journalList) {
+    renderSkeletons();
+    fetchFeed().then(function (items) {
+      if (items && items.length) {
+        renderArticles(items);
+        if (journalStatus) journalStatus.textContent = '出典：公式Note（RSSより自動取得）';
+      } else {
+        renderFeedError();
+        if (journalStatus) journalStatus.textContent = '';
+      }
+    });
+  }
+
+
+  /* =========================================================
+     4. Mobile menu
+  ========================================================== */
+  var toggle = document.getElementById('menu-toggle');
+  var menu   = document.getElementById('mobile-menu');
+
+  function setMenu(open) {
+    if (!toggle || !menu) return;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    menu.style.maxHeight = open ? menu.scrollHeight + 'px' : '0px';
+
+    var bars = toggle.querySelectorAll('.menu-bar');
+    if (bars.length === 3) {
+      bars[0].style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+      bars[1].style.opacity   = open ? '0' : '1';
+      bars[1].style.transform = open ? 'scaleX(.4)' : '';
+      bars[2].style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+    }
+  }
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.querySelectorAll('.mobile-link').forEach(function (link) {
+      link.addEventListener('click', function () { setMenu(false); });
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 768) setMenu(false);
+    });
+  }
+
+
+  /* =========================================================
+     5. Header state on scroll
+  ========================================================== */
+  var header = document.getElementById('site-header');
+  function headerState() {
+    if (!header) return;
+    if (window.pageYOffset > 24) {
+      header.classList.add('shadow-[0_1px_0_0_rgba(209,209,214,0.9)]');
+    } else {
+      header.classList.remove('shadow-[0_1px_0_0_rgba(209,209,214,0.9)]');
+    }
+  }
+  window.addEventListener('scroll', headerState, { passive: true });
+  headerState();
+
+
+  /* =========================================================
+     6. Modals
+  ========================================================== */
+  var lastFocused = null;
+
+  function openModal(id) {
+    var modal = document.getElementById(id);
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    window.requestAnimationFrame(function () {
+      modal.classList.remove('modal-hidden');
+      var focusable = modal.querySelector('.js-close-modal');
+      if (focusable) focusable.focus();
+    });
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.add('modal-hidden');
+    document.body.style.overflow = '';
+    window.setTimeout(function () { modal.classList.add('hidden'); }, 380);
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  document.querySelectorAll('.js-open-modal').forEach(function (btn) {
+    btn.addEventListener('click', function () { openModal(btn.dataset.modal); });
+  });
+
+  document.querySelectorAll('.modal').forEach(function (modal) {
+    modal.querySelectorAll('.js-close-modal').forEach(function (btn) {
+      btn.addEventListener('click', function () { closeModal(modal); });
+    });
+    var overlay = modal.querySelector('.modal-overlay');
+    if (overlay) overlay.addEventListener('click', function () { closeModal(modal); });
+
+    // パネル内の Tab 移動を閉じ込める
+    modal.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var items = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (!items.length) return;
+      var first = items[0];
+      var last  = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.modal:not(.hidden)').forEach(function (modal) { closeModal(modal); });
+  });
+
+})();
+</script>
+
+</body>
+</html>
