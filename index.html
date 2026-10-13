@@ -8,11 +8,18 @@
 <meta property="og:title" content="NXY ｜ NO SEX, NO INTIMACY" />
 <meta property="og:description" content="―― 誰もが、生まれてきてよかったと感じるセックスを。" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="puzzle-bg.jpg" />
+<meta property="og:image" content="ogp.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
@@ -136,8 +143,13 @@
   <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
     <div class="h-16 md:h-20 flex items-center justify-between">
 
-      <a href="#hero" class="font-display text-xl md:text-2xl font-semibold tracking-[0.3em] text-[#1C1C1E] hover:text-[#C00000] transition-colors duration-500">
-        N<span class="text-[#C00000]">X</span>Y
+      <a href="#hero" aria-label="NXY ホームへ" class="block hover:opacity-70 transition-opacity duration-500">
+        <svg class="h-6 md:h-7 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">N</text>
+          <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+          <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">Y</text>
+          <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+        </svg>
       </a>
 
       <nav class="hidden md:block" aria-label="メインナビゲーション">
@@ -145,6 +157,7 @@
           <li><a href="#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
           <li><a href="#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
           <li><a href="#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
           <li><a href="#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
           <li>
             <a href="#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#F4F4F2] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
@@ -169,6 +182,7 @@
         <li><a href="#about" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">ABOUT</a></li>
         <li><a href="#activities" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">ACTIVITIES</a></li>
         <li><a href="#journal" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">JOURNAL</a></li>
+        <li><a href="#dialogue" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">DIALOGUE</a></li>
         <li><a href="#profile" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">PROFILE</a></li>
         <li><a href="#contact" class="mobile-link block py-4 text-[#C00000] hover:opacity-70 transition-opacity">CONTACT</a></li>
       </ul>
@@ -236,24 +250,21 @@
       <!-- 1 -->
       <article class="mb-20 md:mb-28">
         <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
-          「スペック」で値踏みしあう、<br class="hidden sm:block" />息苦しい世界。
+          なぜ私たちは、<br class="hidden sm:block" />人を「スペック」で値踏みしてしまうのか？
         </h3>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
-          <p class="reveal">年収、肩書、容姿、年齢。</p>
-          <p class="reveal">現代のマッチングアプリや結婚相談所が提示するのは、人間を「スペック」として値踏みしあう取引市場だ。</p>
-          <p class="reveal">相手に選ばれるために、筋トレやダイエットをし、自分を着飾り、恋愛婚活市場において「ダメ」だと思う性格や癖を隠す。</p>
+          <p class="reveal">年収、容姿、年齢。現代のマッチングアプリや婚活市場が提示するのは、人間を「スペック」で値踏みしあう巨大な取引市場だ。</p>
+          <p class="reveal">かつて社会や共同体が分散して引き受けていた生活のリスクは、いまや一組の夫婦という個人のセーフティネットに押し付けられている。</p>
+          <p class="reveal">その過酷な構造の中で、人々は生き残るために必死で相手の条件を求め、画面の向こうでは極端な不平等と選別が繰り返される。</p>
+          <p class="reveal">相手に選ばれるために、筋トレやダイエットをし、自分を着飾り、自分の「ダメ」だと思う性格や癖を隠す。</p>
+          <p class="reveal">スワイプが生む拒絶の連続や、費やしてきた時間への執着（サンクコスト）が自己肯定感を削り、「誰かと深く繋がる感覚」を徐々に、そして確実に奪っていく。</p>
           <p class="reveal vline pl-6 md:pl-8 text-[#C00000] text-base md:text-lg tracking-[0.06em]">「ありのままの自分を愛してほしい」</p>
           <p class="reveal">そう願うことすら、「わがままだ」「現実を見ろ」「あきらめろ」と世間はあなたを正そうとしてくる。</p>
-          <p class="reveal">さらにいま、私たちの社会は互いへの偏見や警戒心で分断され、普通に生きていては男女が混ざりあうことすら難しい。リスクを恐れるあまり、身体的な触れ合いや心の距離は広がり、生身の人間同士が繋がること自体が困難な時代になっている。</p>
-          <p class="reveal">そこには、生身のあなたが息づく余白も、ありのままを受け入れあう温もりもない。</p>
         </div>
-      </article>
 
-      <!-- 2 -->
-      <article class="mb-20 md:mb-28">
-        <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
-          そもそも、なぜ性愛や関係性に<br class="hidden sm:block" />これほど息苦しいルールが存在するのか。
-        </h3>
+        <h4 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mt-14 md:mt-20 mb-8 md:mb-10">
+          なぜ、セックスや婚姻には<br class="hidden sm:block" />これほど強いルールがあるのか？
+        </h4>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
           <p class="reveal">進化生物学の視点に立てば、かつて女性が単独で子育てをすることが生存困難だった時代、集団内での庇護や資源（食料）を獲得し、パートナーを引き留めるための適応戦略として「性的快楽」が機能したと言われている。</p>
           <p class="reveal">さらに人類の歴史において、奪い合いや余計な争いを回避し、集団の秩序を保つために発明された社会システムこそが「一夫一婦制」であり「婚姻制度」だった。</p>
@@ -261,14 +272,14 @@
         </div>
       </article>
 
-      <!-- 3 -->
+      <!-- 2 -->
       <article class="mb-20 md:mb-28">
         <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
           関係性の答えは、<br class="hidden sm:block" />本当に「自分の中」にあるのだろうか？
         </h3>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
           <p class="reveal">だが、問いかけたい。</p>
-          <p class="reveal">DNAに刻まれた古代の生存本能や、過去の社会ルールに従い続けることが、いまの私たちを本当に幸せにしているだろうか。</p>
+          <p class="reveal">DNAに刻まれた古代の生存本能や、過去現在の社会の仕組みに従い続けることが、いまの私たちを本当に幸せにしているだろうか。</p>
           <p class="reveal">関係性の答えは、自分の頭の中（内面）をどれだけ掘り下げても見つからない。世間が提示する「正解のカップル像」にも存在しない。</p>
           <p class="reveal">答えはいつだって、一対一で向き合った「あなたと相手のあいだ」にしかなく、二人だけのユニークな形を泥臭く探求していくプロセスの中にしか存在しないのだ。</p>
           <p class="reveal">私たちは、遺伝子の命令に従うだけの生物ではない。</p>
@@ -284,9 +295,8 @@
           <span class="text-[#C00000]">N</span>O SE<span class="text-[#C00000]">X</span>, NO INTIMAC<span class="text-[#C00000]">Y</span>
         </h3>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
-          <p class="reveal">私たちが探求するのは、綺麗事に包まれた精神論ではない。</p>
-          <p class="reveal">かと言っても、心のない身体の消費権ではない。</p>
-          <p class="reveal">条件で選ぶ世界を捨て、所有しあう契約を疑う。</p>
+          <p class="reveal">私たちが探求するのは、綺麗事でも、心のない身体の消費でもない。</p>
+          <p class="reveal">条件で選ぶ世界を捨て、所有しあう契約を壊す。</p>
           <p class="reveal">スペックという鎧を脱ぎ捨て、むき出しの自分（SEX）で交わり、<br class="hidden md:block" />「生まれてきてよかった」と互いの存在を根底から全肯定しあう深さ（INTIMACY）へ到達する。</p>
           <p class="reveal">誰かに正される必要なんてない。</p>
           <p class="reveal text-[#C00000] text-base md:text-lg tracking-[0.06em]">ただ一対一の「個」として深く繋がりあう、新しい関係性の道をここから切り拓く。</p>
@@ -307,14 +317,14 @@
             <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">N</span>
             <div>
               <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">No / New</p>
-              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">既存の価値観への「NO」。そこから始まる「New（新しい関係性）」。</p>
+              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">既存の価値観・現代社会・構造への「NO」。そこから始まる「New（新しい関係性）」。</p>
             </div>
           </li>
           <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group" style="--reveal-delay:120ms">
             <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">X</span>
             <div>
               <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">SEX / X Chromosome</p>
-              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">生身の身体の交わり、本能、性と生命の根源としての「SEX」と「X染色体」。</p>
+              <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">生身の身体の交わり、本能、そして生命の根源としての「SEX」と「X染色体」。</p>
             </div>
           </li>
           <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group" style="--reveal-delay:240ms">
@@ -327,7 +337,7 @@
         </ul>
 
         <div class="reveal mt-10 space-y-5 text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
-          <p>遺伝子や歴史的制度という枠組みを超え、自らの意思（N）で、身体（X）と心（Y）を結び直す。</p>
+          <p>遺伝子や歴史的制度、アルゴリズムの枠組みを超え、自らの意思（N）で、身体（X）と心（Y）を結び直す。</p>
           <p>NXYは、誰もが「生まれてきてよかった」と全身で感じられる性愛を社会に実装していくプロジェクトです。</p>
         </div>
       </div>
@@ -441,6 +451,85 @@
         VIEW ALL ARTICLES
         <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8599;</span>
       </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     DIALOGUE
+====================================================== -->
+<section id="dialogue" class="relative py-28 md:py-40 lg:py-48 scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-14 md:mb-20">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">DIALOGUE</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="reveal border border-[#D1D1D6] bg-[#EFEFEC] p-8 md:p-12 lg:p-16">
+      <p class="font-display text-[11px] md:text-xs tracking-[0.28em] text-[#C00000] mb-5">DIALOGUE PROJECT</p>
+      <h3 class="text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-10 md:mb-12">
+        性愛と本音をめぐる対話
+      </h3>
+
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-20">
+
+        <!-- 左：趣旨と扱うテーマ -->
+        <div class="lg:col-span-7">
+          <div class="space-y-6 text-[15px] md:text-base leading-[2.2] font-light text-[#1C1C1E]/85">
+            <p>自分の性について、誰かと最後まで話したことはありますか。</p>
+            <p>NXYでは、いまを生きる人が性愛に何を感じ、何を言えずにいるのかを知るための1対1の対話を行っています。用意された問いに沿って、ご一緒に進めます。</p>
+            <p>この時間には目的が2つあります。ひとつは、私がこの社会のリアルを知ること。もうひとつは、あなた自身が「これは建前だ」「これが本音だ」と気づくことです。</p>
+          </div>
+
+          <div class="mt-10 md:mt-12">
+            <p class="font-display text-[10px] tracking-[0.25em] text-[#666666] mb-5">THEMES ／ 扱うテーマ</p>
+            <ul class="flex flex-wrap gap-x-3 gap-y-3 text-[13px] tracking-[0.04em]">
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">身体の感覚</li>
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">これまでの性体験</li>
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">関係の中の力と不公平感</li>
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">避妊とお金</li>
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">パートナー以外との関係</li>
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">言えなかった願望</li>
+              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">あなたにとっての親密さ</li>
+            </ul>
+            <p class="mt-6 text-[13px] leading-[2] text-[#666666]">
+              ※ 個別の設問は事前に公開していません。準備した答えではなく、その場で浮かぶ言葉を大切にしたいためです。答えたくない質問はいつでも飛ばせますし、つらくなったら途中でやめて構いません。
+            </p>
+          </div>
+        </div>
+
+        <!-- 右：条件と注記 -->
+        <div class="lg:col-span-5">
+          <dl class="grid grid-cols-[5.5rem_1fr] gap-y-4 text-[13px] leading-[1.9] border-t border-[#D1D1D6] pt-7">
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">TIME</dt>
+            <dd class="font-light">約60分</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">STYLE</dt>
+            <dd class="font-light">オンライン（ビデオ通話）／1対1</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">FEE</dt>
+            <dd class="font-light">無料</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">RECORD</dt>
+            <dd class="font-light">録音はしません（匿名化したメモのみ）</dd>
+            <dt class="font-display text-[10px] tracking-[0.2em] text-[#666666] pt-1">LIMIT</dt>
+            <dd class="font-light">18歳以上の方</dd>
+          </dl>
+
+          <p class="mt-7 text-[12px] leading-[1.95] text-[#666666]">
+            お話しいただいた内容は、年代・性別・概要レベルに抽象化したうえで、記事や発信に使用する場合があります。原文のまま公開することや、個人・パートナーが特定される書き方は一切いたしません。公開を望まない場合は、対話後でもお申し出いただけます。性的なサービスの提供や、医療・治療行為ではありません。
+          </p>
+
+          <div class="mt-9 border-l-2 border-[#C00000] pl-5 text-[13px] leading-[2.05] font-light">
+            <p class="font-medium tracking-[0.04em] mb-3 text-[#1C1C1E]">どちらを選べばいいか迷ったら</p>
+            <p class="text-[#1C1C1E]/85"><span class="text-[#C00000]">はじめの60分</span> ── 話したいことを、自由に話したい方へ。</p>
+            <p class="text-[#1C1C1E]/85 mt-2"><span class="text-[#C00000]">この対話</span> ── 用意された問いに沿って、自分の本音を探りたい方へ。</p>
+          </div>
+
+          <p class="mt-8 text-[13px] tracking-[0.04em]">
+            ご希望の方は、<a href="#contact" class="text-[#C00000] link-underline">お問い合わせフォーム</a>の種別で「<span class="text-[#C00000]">性愛と本音をめぐる対話（無料）</span>」を選択してください。
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -574,6 +663,7 @@
               <select id="field-type" name="お問い合わせ種別"
                       class="field w-full appearance-none bg-transparent border-b border-[#D1D1D6] py-3 pr-10 text-[15px] tracking-[0.04em] cursor-pointer">
                 <option value="はじめの60分（無料対話）">はじめの60分（無料対話）</option>
+                <option value="性愛と本音をめぐる対話（無料）">性愛と本音をめぐる対話（無料）</option>
                 <option value="パーソナルコーチング">パーソナルコーチング</option>
                 <option value="カップルコーチング">カップルコーチング</option>
                 <option value="ワークショップ・対話会">ワークショップ・対話会</option>
@@ -620,8 +710,13 @@
 
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
       <div>
-        <a href="#hero" class="font-display text-2xl font-semibold tracking-[0.3em] hover:text-[#C00000] transition-colors duration-500">
-          N<span class="text-[#C00000]">X</span>Y
+        <a href="#hero" aria-label="NXY ホームへ" class="inline-block hover:opacity-70 transition-opacity duration-500">
+          <svg class="h-8 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">N</text>
+            <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+            <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">Y</text>
+            <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+          </svg>
         </a>
         <p class="mt-4 text-[12px] tracking-[0.14em] text-[#666666] leading-[2]">
           ―― 誰もが、生まれてきてよかったと感じるセックスを。
@@ -633,6 +728,7 @@
           <li><a href="#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
           <li><a href="#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
           <li><a href="#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
           <li><a href="#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
           <li><a href="#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
           <li>
@@ -757,17 +853,21 @@
         <p>NXY（以下「当方」）は、お客様の個人情報を適切に保護することが社会的責務であると考え、個人情報の保護に関する法律その他の関係法令を遵守し、以下のとおりプライバシーポリシーを定めます。</p>
 
         <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">1. 取得する情報</h3>
-        <p>お問い合わせフォーム、サービスのお申し込み、各種プログラムへのご参加にあたり、お名前、メールアドレス、お問い合わせ種別、ご相談内容等の情報を取得します。</p>
+        <p>お問い合わせフォーム、サービスのお申し込み、各種プログラムへのご参加にあたり、お名前、メールアドレス、お問い合わせ種別、ご相談内容等の情報を取得します。また「性愛と本音をめぐる対話」においては、年代・性別・性的指向・パートナーシップの状況および性愛に関するご経験・ご意見をお聞きします。これらはとりわけ機微な情報であるため、ご本人の同意を得た上でのみ取得し、回答しない自由を常に保障します。</p>
 
         <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">2. 利用目的</h3>
         <ul class="list-disc pl-5 space-y-2 marker:text-[#C00000]">
           <li>お問い合わせへの回答およびご連絡のため</li>
           <li>コーチング、ワークショップ、コミュニティ等のサービス提供および運営のため</li>
           <li>サービスに関するご案内、重要なお知らせの送付のため</li>
+          <li>「性愛と本音をめぐる対話」でお話しいただいた内容を、個人が特定できない形に抽象化したうえで、研究・記事・発信に利用するため</li>
           <li>個人を特定できない形での統計データ作成およびサービス改善のため</li>
         </ul>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">3. 第三者提供</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">3. 対話内容の取り扱いと撤回</h3>
+        <p>「性愛と本音をめぐる対話」では録音を行わず、匿名化したメモのみを作成します。記事等への利用は「年代・性別・概要」レベルへの抽象化を前提とし、発言を原文のまま掲載することや、ご本人・パートナーが特定される書き方はいたしません。対話後であっても、利用の停止やメモの削除をご連絡いただけば速やかに対応します。</p>
+
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">4. 第三者提供</h3>
         <p>当方は、次の場合を除き、ご本人の同意なく個人情報を第三者に提供しません。</p>
         <ul class="list-disc pl-5 space-y-2 marker:text-[#C00000] mt-3">
           <li>法令に基づく場合</li>
@@ -775,25 +875,25 @@
           <li>国の機関等の法令で定める事務の遂行に協力する必要がある場合</li>
         </ul>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">4. 業務委託</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">5. 業務委託</h3>
         <p>利用目的の達成に必要な範囲で、フォーム運用やメール配信等の業務を外部に委託する場合があります。その際は、委託先に対して適切な監督を行います。</p>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">5. 守秘義務（セッション内容の取り扱い）</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">6. 守秘義務（セッション内容の取り扱い）</h3>
         <p>コーチングおよびワークショップにおいて知り得たお客様の情報は、国際コーチング連盟（ICF）倫理規程に準じ、厳格に秘密として保持します。ただし、ご本人または第三者の生命・身体に重大な危険が及ぶおそれがある場合、および法令に基づき開示が求められる場合はこの限りではありません。</p>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">6. 安全管理措置</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">7. 安全管理措置</h3>
         <p>個人情報の漏えい、滅失または毀損の防止その他の安全管理のため、必要かつ適切な措置を講じます。</p>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">7. Cookie・アクセス解析</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">8. Cookie・アクセス解析</h3>
         <p>本サイトでは、利便性の向上およびアクセス状況の把握のためにCookieを利用する場合があります。これらにより個人を特定する情報を取得することはありません。Cookieの利用はブラウザの設定により無効化できます。</p>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">8. 開示・訂正・削除</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">9. 開示・訂正・削除</h3>
         <p>ご本人から個人情報の開示、訂正、利用停止、削除のお申し出があった場合は、ご本人であることを確認のうえ、合理的な期間内に対応いたします。</p>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">9. 本ポリシーの変更</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">10. 本ポリシーの変更</h3>
         <p>法令の改正やサービス内容の変更に応じて、本ポリシーを改定することがあります。改定後の内容は本ページに掲載した時点から効力を生じます。</p>
 
-        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">10. お問い合わせ窓口</h3>
+        <h3 class="font-medium text-[#1C1C1E] tracking-[0.06em] mt-9 mb-3">11. お問い合わせ窓口</h3>
         <p>NXY　代表：星野 直道<br />所在地：千葉県柏市柏の葉2-5-9<br />メール：hoshino.naomichi@gmail.com</p>
       </div>
 
