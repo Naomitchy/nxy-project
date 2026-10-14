@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>マッチングアプリの中で、なにが起こっているのか ｜ RESEARCH ｜ NXY</title>
+<meta name="description" content="アプリは出会いの主要経路になった。その内部では注目が一方向に流れ、選択肢の多さは満足に結びつかない。アプリが生んだものと、増幅しただけのものを、研究にあたって切り分ける。" />
+<meta property="og:title" content="マッチングアプリの中で、なにが起こっているのか ｜ NXY" />
+<meta property="og:description" content="アプリが生んだものと、増幅しただけのもの。研究にあたって切り分ける。" />
+
+<meta property="og:type" content="article" />
+<meta property="og:image" content="../../ogp.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          jp: ['"Shippori Mincho"', 'serif'],
+          cinzel: ['Cinzel', 'serif']
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="../style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "マッチングアプリの中で、なにが起こっているのか",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": { "@type": "Person", "name": "星野 直道" },
+  "publisher": { "@type": "Organization", "name": "NXY" },
+  "inLanguage": "ja"
+}
+</script>
+</head>
+
+<body class="bg-[#F4F4F2] text-[#1C1C1E] antialiased">
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#F4F4F2]/80 border-b border-[#D1D1D6]/60">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="h-16 md:h-20 flex items-center justify-between">
+
+      <a href="../../index.html" aria-label="NXY ホームへ" class="block hover:opacity-70 transition-opacity duration-500">
+        <svg class="h-5 md:h-6 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
+          <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+          <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
+          <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+        </svg>
+      </a>
+
+      <nav aria-label="メインナビゲーション">
+        <ul class="flex items-center gap-6 md:gap-10 font-display text-[11px] lg:text-xs tracking-[0.22em]">
+          <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
+          <li class="hidden sm:block"><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li>
+            <a href="../../index.html#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#F4F4F2] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<main class="pt-16 md:pt-20">
+
+<article class="relative py-20 md:py-28 lg:py-32">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <!-- ===== 記事ヘッダー ===== -->
+    <header class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%] mb-16 md:mb-24">
+
+      <nav aria-label="パンくず" class="reveal font-display text-[11px] tracking-[0.22em] text-[#666666] mb-10 md:mb-14">
+        <a href="../../index.html" class="link-underline hover:text-[#C00000]">HOME</a>
+        <span class="mx-3" aria-hidden="true">/</span>
+        <a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a>
+        <span class="mx-3" aria-hidden="true">/</span>
+        <span class="text-[#1C1C1E]">R-02</span>
+      </nav>
+
+      <p class="reveal flex items-baseline gap-4 mb-6">
+        <span class="font-display text-sm md:text-base tracking-[0.2em] text-[#C00000]">02</span>
+        <span class="text-[11px] md:text-xs tracking-[0.28em] text-[#666666]">現状：選別と消費の地獄</span>
+      </p>
+
+      <h1 class="reveal text-2xl md:text-4xl font-medium leading-[1.65] tracking-[0.04em] mb-10">
+        マッチングアプリの中で、<br class="hidden sm:block" />なにが起こっているのか
+      </h1>
+
+      <dl class="reveal flex flex-wrap gap-x-8 gap-y-3 font-display text-[11px] tracking-[0.2em] text-[#666666] pb-10 border-b border-[#D1D1D6]">
+        <div class="flex gap-3"><dt>PUBLISHED</dt><dd><time datetime="2026-10-14">2026.10.14</time></dd></div>
+        <div class="flex gap-3"><dt>READ</dt><dd>約 11 分</dd></div>
+        <div class="flex gap-3"><dt>REFERENCES</dt><dd>7 件</dd></div>
+      </dl>
+    </header>
+
+
+    <div class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%]">
+
+      <!-- ===== ① 問い ===== -->
+      <section class="mb-16 md:mb-20">
+        <p class="reveal rule-label font-display text-[11px] tracking-[0.28em] text-[#C00000] mb-7">QUESTION</p>
+        <p class="reveal vline pl-6 md:pl-8 text-lg md:text-xl leading-[1.9] tracking-[0.04em] text-[#C00000]">
+          マッチングアプリの中で、実際には何が起きているのか。
+        </p>
+      </section>
+
+      <!-- ===== ② 要約 ===== -->
+      <section class="reveal mb-16 md:mb-20 border border-[#D1D1D6] bg-[#EFEFEC] p-8 md:p-10">
+        <p class="font-display text-[11px] tracking-[0.28em] text-[#666666] mb-6">SUMMARY ／ 3行でわかる</p>
+        <ul class="prose-nxy text-[15px]">
+          <li>アプリはすでに出会いの主要な経路である。少なくとも米国の異性愛カップルでは、最も多い出会い方になった。</li>
+          <li>その内部では「注目が一方向に流れる構造」と「選択肢が増えても満足が増えるとは限らない構造」が同時に働いている。</li>
+          <li>ただし「アプリが人を変えた」という話ではない。元からあった選別を、可視化し高速化した装置と見るほうが正確だ。</li>
+        </ul>
+      </section>
+
+      <!-- ===== 目次 ===== -->
+      <nav class="reveal mb-16 md:mb-24 border-t border-b border-[#D1D1D6] py-8" aria-labelledby="toc-heading">
+        <p id="toc-heading" class="font-display text-[11px] tracking-[0.28em] text-[#666666] mb-6">CONTENTS</p>
+        <ol class="toc text-[14px] leading-[1.9] font-light">
+          <li><a href="#s1" class="link-underline hover:text-[#C00000]">1. 通説と、その問題点</a></li>
+          <li><a href="#s2" class="link-underline hover:text-[#C00000]">2. 根拠となる研究</a></li>
+          <li><a href="#s3" class="link-underline hover:text-[#C00000]">3. NXYはこう読む</a></li>
+          <li><a href="#s4" class="link-underline hover:text-[#C00000]">4. この説明の限界と反証</a></li>
+          <li><a href="#refs" class="link-underline hover:text-[#C00000]">5. 出典</a></li>
+        </ol>
+      </nav>
+
+      <!-- ===== ③ 通説と、その問題点 ===== -->
+      <section id="s1" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          1. 通説と、その問題点
+        </h2>
+        <div class="prose-nxy">
+          <p class="reveal">マッチングアプリについては、正反対の二つの通説が同時に流通している。</p>
+
+          <p class="reveal"><strong>通説A「アプリは出会いを民主化した」。</strong>職場や友人の紹介に頼らなくても、誰もが膨大な候補にアクセスできるようになった。これは事実の一面を突いている。特に、周囲に同じ指向の人が少ない場合や、既存の人間関係の外に出たい場合、アプリは実際に選択肢を広げた。</p>
+
+          <p class="reveal"><strong>通説B「アプリが人を薄っぺらくした」。</strong>写真と数行のプロフィールで人を判断し、スワイプで切り捨てる。人間がカタログの商品になった。これもまた、多くの人の実感に合っている。</p>
+
+          <p class="reveal">しかし、どちらの通説にも穴がある。</p>
+
+          <p class="reveal"><strong>Aの問題は、機会の総量と分配を混同していることだ。</strong>アクセスできる候補の数が増えたことと、各人が受け取る関心の量が増えたことは、まったく別の話である。後述するように、アプリの中で注目はきわめて偏って分配される。</p>
+
+          <p class="reveal"><strong>Bの問題は、歴史を無視していることだ。</strong>条件で人を選別する仕組みは、アプリが発明したものではない。釣書を交換する見合いも、年収と年齢で絞り込む結婚相談所も、そのために存在してきた。アプリ以前にも、人は条件で選ばれ、選んでいた。</p>
+
+          <p class="reveal">だとすれば、問うべきは「アプリが何を生んだか」ではない。<strong>「アプリが何を増幅したか」</strong>である。</p>
+        </div>
+      </section>
+
+      <!-- ===== ④ 根拠となる研究 ===== -->
+      <section id="s2" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          2. 根拠となる研究
+        </h2>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-1. アプリは、例外ではなく標準になった</h3>
+        <div class="prose-nxy">
+          <p class="reveal">米国の全国代表サンプルを用いた調査では、オンラインで出会ったカップルの割合が長期にわたって上昇を続け、<strong>友人や家族の紹介といった従来の経路を置き換えてきた</strong>ことが示されている<sup class="font-display text-[#C00000]">[1]</sup>。</p>
+          <p class="reveal">ここで重要なのは、アプリがもはや「特別な手段」ではないという点だ。人づてで出会うことのほうが、むしろ少数派になりつつある。つまり<strong>アプリの設計は、社会全体の出会い方の設計とほぼ同義になった</strong>。</p>
+          <p class="reveal">なお、この調査は米国のデータであり、異性愛カップルを中心に分析されている。日本の状況や、同性カップルの経路がそのまま同じだとは言えない。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-2. 注目は、一方向に流れる</h3>
+        <div class="prose-nxy">
+          <p class="reveal">米国4都市の大手オンラインデートサイトで、誰が誰にメッセージを送ったかを大規模に解析した研究がある<sup class="font-display text-[#C00000]">[2]</sup>。そこから見えたのは、利用者のあいだに<strong>明確な「望ましさ」の序列が存在する</strong>ことだった。</p>
+          <p class="reveal">さらに踏み込んだ発見がある。人は自分と同程度の相手に送るのではなく、<strong>自分より望ましいとされる相手に向けてメッセージを送る傾向がある</strong>。同研究は、その差をおよそ25%と推定している。</p>
+        </div>
+
+        <figure class="figure-nxy reveal">
+          <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title fig1-desc">
+            <title id="fig1-title">アプリ内での注目の流れ</title>
+            <desc id="fig1-desc">利用者は望ましさの序列に並び、メッセージは自分より上位の相手へ向かって一方向に流れる。</desc>
+
+            <text x="170" y="74" text-anchor="end" font-family="'Shippori Mincho', serif" font-size="20" fill="#1C1C1E">上位</text>
+            <text x="170" y="320" text-anchor="end" font-family="'Shippori Mincho', serif" font-size="20" fill="#1C1C1E">下位</text>
+            <text x="170" y="196" text-anchor="end" font-family="'Shippori Mincho', serif" font-size="17" fill="#666666">望ましさ</text>
+
+            <rect x="380" y="40" width="160" height="52" fill="#EFEFEC" stroke="#D1D1D6" stroke-width="1" />
+            <rect x="320" y="122" width="280" height="52" fill="#EFEFEC" stroke="#D1D1D6" stroke-width="1" />
+            <rect x="260" y="204" width="400" height="52" fill="#EFEFEC" stroke="#D1D1D6" stroke-width="1" />
+            <rect x="200" y="286" width="520" height="52" fill="#EFEFEC" stroke="#D1D1D6" stroke-width="1" />
+
+            <g stroke="#C00000" stroke-width="3" fill="#C00000">
+              <line x1="460" y1="120" x2="460" y2="100" />
+              <polygon points="460,92 452,106 468,106" stroke="none" />
+              <line x1="460" y1="202" x2="460" y2="182" />
+              <polygon points="460,174 452,188 468,188" stroke="none" />
+              <line x1="460" y1="284" x2="460" y2="264" />
+              <polygon points="460,256 452,270 468,270" stroke="none" />
+            </g>
+
+            <rect x="200" y="368" width="24" height="10" fill="#C00000" />
+            <text x="236" y="378" font-family="'Shippori Mincho', serif" font-size="16" fill="#666666">メッセージが向かう方向</text>
+          </svg>
+          <figcaption>
+            図1　アプリ内での注目の流れ（模式図）。階層の幅や25%という数値を図示したものではなく、向きの一方向性を示すための図。出典[2]の知見をもとに作成。
+          </figcaption>
+        </figure>
+
+        <div class="prose-nxy">
+          <p class="reveal">この向きが一方向であることの帰結は重い。<strong>大多数の利用者は、届きにくい相手に送り続け、自分に届いたメッセージは物足りなく感じる</strong>という状態に置かれる。双方が同時にそう感じている。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-3. アルゴリズムは「相性」を予測できていない</h3>
+        <div class="prose-nxy">
+          <p class="reveal">オンラインデートを心理学の観点から包括的に検討した大規模レビューがある<sup class="font-display text-[#C00000]">[3]</sup>。その結論は三つに整理できる。</p>
+          <ul>
+            <li class="reveal">出会える相手の範囲が広がること自体は、<strong>本物の利点</strong>である。</li>
+            <li class="reveal">一方で、プロフィールを並べて比較する<strong>「買い物のような」閲覧の仕方</strong>には固有の問題がある。</li>
+            <li class="reveal">そして、<strong>相性を事前に予測できるとするマッチングアルゴリズムの主張は、証拠に支えられていない</strong>。</li>
+          </ul>
+          <p class="reveal">三点目は、広告で繰り返される「科学的マッチング」という言葉に対する、正面からの否定である。二人が出会う前の属性データから関係の行方を予測することは、現時点では確立された技術ではない。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-4. 選択肢は、多いほどよいとは限らない</h3>
+        <div class="prose-nxy">
+          <p class="reveal">選択肢が増えすぎると、人はかえって選べなくなり、選んだ後の満足も下がる。この「選択過多」の効果は、古典的な実験で報告されてきた<sup class="font-display text-[#C00000]">[4]</sup>。</p>
+          <p class="reveal">ただし<strong>この効果は、その後の検証で揺らいでいる</strong>。多数の研究を統合したメタ分析では、平均的な効果はほぼゼロと報告された<sup class="font-display text-[#C00000]">[5]</sup>。「選択肢が多いと不幸になる」と単純に言い切ることはできない。</p>
+          <p class="reveal">この論点を本記事に残すのは、結論が出ていないからこそである。アプリ批判の文脈で選択過多はよく引かれるが、<strong>その土台は見た目ほど堅くない</strong>。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-5. 利用と、自分の身体の見え方</h3>
+        <div class="prose-nxy">
+          <p class="reveal">スワイプ型アプリの利用者を対象にした調査では、利用者は非利用者に比べて身体への満足度が低く、外見を他者と比べる傾向や身体に対する恥の感覚が強い、という関連が男女ともに報告されている<sup class="font-display text-[#C00000]">[6]</sup>。</p>
+          <p class="reveal">ただしこれは<strong>ある一時点を切り取った調査</strong>であり、因果の向きは分からない。詳しくは次節で述べる。</p>
+        </div>
+      </section>
+
+      <!-- ===== ⑤ NXYの読み方 ===== -->
+      <section id="s3" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          3. NXYはこう読む
+        </h2>
+
+        <div class="reveal border-l-2 border-[#D1D1D6] pl-6 md:pl-8 mb-10">
+          <p class="text-[13px] leading-[2] text-[#666666]">
+            ここから先は解釈です。前節までの記述とは性質が異なります。
+          </p>
+        </div>
+
+        <div class="prose-nxy">
+          <p class="reveal">アプリは「相手を探す道具」の顔をしている。だが実際に起きているのは、それだけではない。</p>
+          <p class="reveal">スワイプしているとき、人は相手を評価する側に立っている。と同時に、<strong>自分も評価される側として、同じ市場に並べられている</strong>。道具を使っているつもりで、道具の中に入っている。</p>
+          <p class="reveal">そして注目の流れが一方向だということは、構造上、<strong>ほとんどの人が「届かない相手に送り、届いた相手には心を動かされない」位置に置かれる</strong>ということだ。これは誰かの努力不足の結果ではない。序列を可視化して高速に回せば、必然的にそうなる。</p>
+          <p class="reveal vline pl-6 md:pl-8 text-base md:text-lg tracking-[0.06em] text-[#C00000]">拒絶は、失敗ではない。この構造の既定の出力である。</p>
+          <p class="reveal">だから「選ばれないのは自分に価値がないからだ」という読み方は、事実として間違っている。あなたが受け取っているのは、あなたへの評価ではなく、<strong>システムの出力</strong>だ。</p>
+          <p class="reveal">そのうえで、アプリを使うなと言いたいわけではない。範囲を広げる利点は本物であり<sup class="font-display text-[#C00000]">[3]</sup>、実際に多くの関係がそこから始まっている。問題は道具の存在ではなく、<strong>道具の出力を自分の価値だと取り違えること</strong>にある。</p>
+        </div>
+      </section>
+
+      <!-- ===== ⑥ 限界と反証 ===== -->
+      <section id="s4" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          4. この説明の限界と反証
+        </h2>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">そうである（Is）と、そうあるべき（Ought）は別である</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">こういう構造になっている、という記述は、そうあるべきだという主張ではない。同時に、<strong>構造のせいだという説明を、自分の振る舞いの免責に使うこともできない</strong>。誰かを雑に扱ってよい理由にはならない。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">相関と因果が、区別できていない</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">2-5で挙げた調査は一時点の断面を見たものであり、<strong>アプリを使うから自己評価が下がるのか、自己評価が低い人がアプリを使いやすいのか、どちらとも言えない</strong><sup class="font-display text-[#C00000]">[6]</sup>。「アプリが人を傷つける」と因果の言葉で語ることは、この研究からは正当化されない。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">選択過多の効果は、確立していない</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">2-4で述べたとおり、メタ分析では平均効果がほぼゼロと報告されている<sup class="font-display text-[#C00000]">[5]</sup>。<strong>本記事の2-4は、論拠として最も弱い部分である</strong>。ここを根拠に議論を組み立てないでいただきたい。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">データの偏り</h3>
+        <div class="prose-nxy mb-12">
+          <ul>
+            <li class="reveal"><strong>国の偏り。</strong>本記事の中心となる研究は米国のものである。日本のアプリ利用の実態がこれと同じである保証はない。行動科学の知見が欧米のサンプルに偏っていることは、以前から指摘されてきた<sup class="font-display text-[#C00000]">[7]</sup>。</li>
+            <li class="reveal"><strong>異性愛を前提とした分析。</strong>大規模解析の多くは男女間のやり取りを対象としている。同性間の、あるいはそれ以外の関係における力学が同じだとは言えない。<strong>ここで描いた構造は、すべての人の経験ではない。</strong></li>
+            <li class="reveal"><strong>アプリは一枚岩ではない。</strong>スワイプ型、質問回答型、紹介型では設計思想が異なり、利用者の振る舞いも変わる。「マッチングアプリ」と一括りにする議論は、それ自体が雑である。</li>
+            <li class="reveal"><strong>データを握っているのは企業である。</strong>内部の挙動を検証できる外部研究者は限られる。公開される分析は、企業が公開を許した範囲のものである可能性を割り引く必要がある。</li>
+          </ul>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">否定的な話に偏る</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">アプリで良い関係を築いた人は、わざわざそれを記事にしない。<strong>語られる体験は、うまくいかなかった側に偏る</strong>。本記事もその偏りから自由ではない。実際には、アプリを経て長く続く関係を得た人が相当数いる。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">個人差</h3>
+        <div class="prose-nxy">
+          <p class="reveal">集団の傾向は、目の前の一人について何も語らない。<strong>アプリを楽しく使えている人は、構造を理解していないわけでも、感受性が鈍いわけでもない。</strong>合う人と合わない人がいる、というだけのことだ。</p>
+        </div>
+      </section>
+
+      <!-- ===== ⑦ 出典 ===== -->
+      <section id="refs" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          5. 出典
+        </h2>
+
+        <p class="reveal text-[13px] leading-[2] text-[#666666] mb-8">
+          書式：著者（発行年）「論文名」『媒体名』巻(号), 頁. DOI または URL ／ 書籍は 著者（発行年）『書名』出版社.
+        </p>
+
+        <ol class="refs reveal">
+          <li>Rosenfeld, M. J., Thomas, R. J., &amp; Hausen, S.（2019）「Disintermediating your friends: How online dating in the United States displaces other ways of meeting」『Proceedings of the National Academy of Sciences』116(36), 17753–17758. <a href="https://doi.org/10.1073/pnas.1908630116" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1073/pnas.1908630116</a></li>
+          <li>Bruch, E. E., &amp; Newman, M. E. J.（2018）「Aspirational pursuit of mates in online dating markets」『Science Advances』4(8), eaap9815. <a href="https://doi.org/10.1126/sciadv.aap9815" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1126/sciadv.aap9815</a></li>
+          <li>Finkel, E. J., Eastwick, P. W., Karney, B. R., Reis, H. T., &amp; Sprecher, S.（2012）「Online Dating: A Critical Analysis From the Perspective of Psychological Science」『Psychological Science in the Public Interest』13(1), 3–66. <a href="https://doi.org/10.1177/1529100612436522" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1177/1529100612436522</a></li>
+          <li>Iyengar, S. S., &amp; Lepper, M. R.（2000）「When choice is demotivating: Can one desire too much of a good thing?」『Journal of Personality and Social Psychology』79(6), 995–1006. <a href="https://doi.org/10.1037/0022-3514.79.6.995" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1037/0022-3514.79.6.995</a></li>
+          <li>Scheibehenne, B., Greifeneder, R., &amp; Todd, P. M.（2010）「Can There Ever Be Too Many Options? A Meta-Analytic Review of Choice Overload」『Journal of Consumer Research』37(3), 409–425. <a href="https://doi.org/10.1086/651235" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1086/651235</a></li>
+          <li>Strubel, J., &amp; Petrie, T. A.（2017）「Love me Tinder: Body image and psychosocial functioning among men and women」『Body Image』21, 34–38. <a href="https://doi.org/10.1016/j.bodyim.2017.02.006" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1016/j.bodyim.2017.02.006</a></li>
+          <li>Henrich, J., Heine, S. J., &amp; Norenzayan, A.（2010）「The weirdest people in the world?」『Behavioral and Brain Sciences』33(2–3), 61–83（討論 83–135）. <a href="https://doi.org/10.1017/S0140525X0999152X" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1017/S0140525X0999152X</a></li>
+        </ol>
+
+        <p class="reveal mt-8 text-[12px] leading-[2] text-[#666666]">
+          最終アクセス日：2026.10.14　／　誤りのご指摘は
+          <a href="../../index.html#contact" class="text-[#C00000] link-underline">お問い合わせ</a>
+          からお寄せください。確認のうえ本文を訂正し、訂正履歴を残します。
+        </p>
+      </section>
+
+      <!-- ===== ⑧ 関連記事 ===== -->
+      <section>
+        <p class="reveal font-display text-[11px] tracking-[0.28em] text-[#666666] mb-8">RELATED</p>
+        <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
+          <li class="reveal">
+            <a href="../gender-categories/" class="group flex items-baseline gap-6 py-7">
+              <span class="font-display text-[11px] tracking-[0.2em] text-[#666666] shrink-0">R-04</span>
+              <span class="text-[15px] leading-[1.9] group-hover:text-[#C00000] transition-colors duration-500">「男」「女」と言った瞬間に、こぼれ落ちるもの</span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a href="../sexual-pleasure/" class="group flex items-baseline gap-6 py-7">
+              <span class="font-display text-[11px] tracking-[0.2em] text-[#666666] shrink-0">R-01</span>
+              <span class="text-[15px] leading-[1.9] group-hover:text-[#C00000] transition-colors duration-500">なぜ人間のセックスには、快楽が伴うのか</span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a href="../" class="group flex items-baseline gap-6 py-7">
+              <span class="font-display text-[11px] tracking-[0.2em] text-[#666666] shrink-0">INDEX</span>
+              <span class="text-[15px] leading-[1.9] group-hover:text-[#C00000] transition-colors duration-500">RESEARCH 一覧へ</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</article>
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+<section class="relative py-20 md:py-28 bg-[#EFEFEC] border-t border-[#D1D1D6]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="max-w-[44rem]">
+      <p class="reveal text-lg md:text-xl font-light tracking-[0.06em] mb-10">
+        この問いを、誰かと最後まで話したことはありますか。
+      </p>
+      <a href="../../index.html#dialogue"
+         class="reveal group inline-flex items-center gap-5 border border-[#1C1C1E] px-10 md:px-14 py-5 font-display text-xs tracking-[0.28em]
+                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] hover:-translate-y-1 transition-all duration-500">
+        VIEW DIALOGUE
+        <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="border-t border-[#D1D1D6] bg-[#F4F4F2]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-14 md:py-20">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+      <div>
+        <a href="../../index.html" aria-label="NXY ホームへ" class="inline-block hover:opacity-70 transition-opacity duration-500">
+          <svg class="h-8 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
+            <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+            <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
+            <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+          </svg>
+        </a>
+        <p class="mt-4 text-[12px] tracking-[0.14em] text-[#666666] leading-[2]">
+          ―― 誰もが、生まれてきてよかったと感じるセックスを。
+        </p>
+      </div>
+
+      <nav aria-label="フッターナビゲーション">
+        <ul class="flex flex-wrap gap-x-8 gap-y-4 font-display text-[11px] tracking-[0.22em] text-[#666666]">
+          <li><a href="../../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
+          <li><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="../../index.html#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-[#D1D1D6]">
+      <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">&copy; NXY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

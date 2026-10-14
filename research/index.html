@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RESEARCH ｜ NXY</title>
+<meta name="description" content="進化生物学、人類学、社会学、心理学。各分野の論文と書籍にあたり、どこまでが分かっていて、どこからが分かっていないのかを一本ずつ整理した記事を公開しています。" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="RESEARCH ｜ NXY" />
+<meta property="og:description" content="進化生物学、人類学、社会学、心理学。各分野の論文と書籍にあたり、一本ずつ検証した記事群。" />
+<meta property="og:image" content="../ogp.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          jp: ['"Shippori Mincho"', 'serif'],
+          cinzel: ['Cinzel', 'serif']
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-[#F4F4F2] text-[#1C1C1E] antialiased">
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#F4F4F2]/80 border-b border-[#D1D1D6]/60">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="h-16 md:h-20 flex items-center justify-between">
+
+      <a href="../index.html" aria-label="NXY ホームへ" class="block hover:opacity-70 transition-opacity duration-500">
+        <svg class="h-5 md:h-6 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
+          <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+          <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
+          <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+        </svg>
+      </a>
+
+      <nav aria-label="メインナビゲーション">
+        <ul class="flex items-center gap-6 md:gap-10 font-display text-[11px] lg:text-xs tracking-[0.22em]">
+          <li><a href="../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li class="hidden sm:block"><a href="../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li>
+            <a href="../index.html#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#F4F4F2] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<main class="pt-16 md:pt-20">
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+<section class="relative py-24 md:py-32 lg:py-40 border-b border-[#D1D1D6]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <nav aria-label="パンくず" class="reveal font-display text-[11px] tracking-[0.22em] text-[#666666] mb-10 md:mb-14">
+      <a href="../index.html" class="link-underline hover:text-[#C00000]">HOME</a>
+      <span class="mx-3" aria-hidden="true">/</span>
+      <span class="text-[#1C1C1E]">RESEARCH</span>
+    </nav>
+
+    <div class="flex items-baseline gap-6 mb-12 md:mb-16">
+      <h1 class="reveal font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">RESEARCH</h1>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="max-w-[44rem]">
+      <p class="reveal text-lg md:text-2xl font-light tracking-[0.08em] mb-7">意見ではなく、典拠から。</p>
+      <p class="reveal text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
+        進化生物学、人類学、社会学、心理学。各分野の論文と書籍にあたり、どこまでが分かっていて、どこからが分かっていないのかを一本ずつ整理した記事を公開します。
+      </p>
+      <p class="reveal mt-6 text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
+        すべての記事に「この説明の限界と反証」を置いています。
+        都合のよい研究だけを並べて断定することは、私たちが壊したいと言っている構造そのものだからです。
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     ARTICLES
+====================================================== -->
+<section class="relative py-24 md:py-32 lg:py-40">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <!-- 01 -->
+    <div class="mb-20 md:mb-28">
+      <div class="reveal flex items-baseline gap-4 mb-8 md:mb-10 pb-5 border-b border-[#1C1C1E]">
+        <span class="font-display text-lg md:text-xl tracking-[0.2em] text-[#C00000]">01</span>
+        <h2 class="text-sm md:text-base tracking-[0.2em]">構造：本能と制度の起源</h2>
+        <span class="ml-auto font-display text-[11px] tracking-[0.2em] text-[#666666]">1 ARTICLE</span>
+      </div>
+
+      <ul class="divide-y divide-[#D1D1D6] border-b border-[#D1D1D6]">
+        <li class="reveal">
+          <a href="sexual-pleasure/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10 transition-colors duration-500">
+            <p class="sm:w-32 shrink-0 font-display text-[11px] tracking-[0.2em] text-[#666666] sm:pt-1">R-01</p>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+                なぜ人間のセックスには、快楽が伴うのか
+              </h3>
+              <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+                「子を残すためのご褒美」では、ヒトの性行動の大半が説明できない。快楽は繁殖の動機であると同時に、関係を維持する装置としても働いたのか。有力な仮説と、その限界を整理する。
+              </p>
+              <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">
+                参考文献 9件　／　約 10 分　／　2026.10.14
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 02 -->
+    <div class="mb-20 md:mb-28">
+      <div class="reveal flex items-baseline gap-4 mb-8 md:mb-10 pb-5 border-b border-[#1C1C1E]">
+        <span class="font-display text-lg md:text-xl tracking-[0.2em] text-[#C00000]">02</span>
+        <h2 class="text-sm md:text-base tracking-[0.2em]">現状：選別と消費の地獄</h2>
+        <span class="ml-auto font-display text-[11px] tracking-[0.2em] text-[#666666]">2 ARTICLES</span>
+      </div>
+      <ul class="divide-y divide-[#D1D1D6] border-b border-[#D1D1D6]">
+        <li class="reveal">
+          <a href="dating-apps/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10 transition-colors duration-500">
+            <p class="sm:w-32 shrink-0 font-display text-[11px] tracking-[0.2em] text-[#666666] sm:pt-1">R-02</p>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+                マッチングアプリの中で、なにが起こっているのか
+              </h3>
+              <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+                アプリは出会いの主要経路になった。その内部では注目が一方向に流れ、選択肢の多さは満足に結びつかない。アプリが生んだものと、増幅しただけのものを切り分ける。
+              </p>
+              <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">
+                参考文献 7件　／　約 11 分　／　2026.10.14
+              </p>
+            </div>
+          </a>
+        </li>
+        <li class="reveal">
+          <a href="compensated-dating/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10 transition-colors duration-500">
+            <p class="sm:w-32 shrink-0 font-display text-[11px] tracking-[0.2em] text-[#666666] sm:pt-1">R-03</p>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+                パパ活、援助交際。なぜ、名前を変えながら存在し続けるのか。
+              </h3>
+              <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+                風俗という制度化された経路があるのに、なぜその外側の形が残り続けるのか。風営法と売春防止法の設計思想を比べ、是非ではなく構造から説明する。
+              </p>
+              <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">
+                参考文献 8件　／　約 13 分　／　2026.10.14
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 03 -->
+    <div class="mb-20 md:mb-28">
+      <div class="reveal flex items-baseline gap-4 mb-8 md:mb-10 pb-5 border-b border-[#1C1C1E]">
+        <span class="font-display text-lg md:text-xl tracking-[0.2em] text-[#C00000]">03</span>
+        <h2 class="text-sm md:text-base tracking-[0.2em]">葛藤：生身の感情と抑圧</h2>
+        <span class="ml-auto font-display text-[11px] tracking-[0.2em] text-[#666666]">1 ARTICLE</span>
+      </div>
+      <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
+        <li class="reveal">
+          <a href="gender-categories/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10 transition-colors duration-500">
+            <p class="sm:w-32 shrink-0 font-display text-[11px] tracking-[0.2em] text-[#666666] sm:pt-1">R-04</p>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+                「男」「女」と言った瞬間に、こぼれ落ちるもの
+              </h3>
+              <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+                心理的な性差を統合すると、平均は d = 0.21。この大きさでは二つの分布は約9割重なる。平均差は存在する。しかしそこから個人を推定することはできない。
+              </p>
+              <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">
+                参考文献 8件　／　約 12 分　／　2026.10.14
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 04 -->
+    <div>
+      <div class="reveal flex items-baseline gap-4 mb-8 md:mb-10 pb-5 border-b border-[#1C1C1E]">
+        <span class="font-display text-lg md:text-xl tracking-[0.2em] text-[#C00000]">04</span>
+        <h2 class="text-sm md:text-base tracking-[0.2em]">宣言：新しい関係性へ</h2>
+        <span class="ml-auto font-display text-[11px] tracking-[0.2em] text-[#666666]">1 ARTICLE</span>
+      </div>
+      <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
+        <li class="reveal">
+          <a href="relationship-forms/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10 transition-colors duration-500">
+            <p class="sm:w-32 shrink-0 font-display text-[11px] tracking-[0.2em] text-[#666666] sm:pt-1">R-05</p>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+                恋人は、ひとりでなければいけないのか
+              </h3>
+              <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+                関係の「形」は、その関係がうまくいくかどうかを予測しているのか。測った研究では、形による差はほとんど見つかっていない。差があったのは、関係を見る目の側だった。
+              </p>
+              <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">
+                参考文献 8件　／　約 13 分　／　2026.10.14
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+<section class="relative py-20 md:py-28 bg-[#EFEFEC] border-t border-[#D1D1D6]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="max-w-[44rem]">
+      <p class="reveal text-lg md:text-xl font-light tracking-[0.06em] mb-6">
+        日々の思索と対話の記録は JOURNAL にあります。
+      </p>
+      <p class="reveal text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-10">
+        RESEARCH が典拠を積み上げる場だとすれば、JOURNAL は現場で生まれた問いを置く場です。
+      </p>
+      <a href="../index.html#journal"
+         class="reveal group inline-flex items-center gap-5 border border-[#1C1C1E] px-10 md:px-14 py-5 font-display text-xs tracking-[0.28em]
+                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] hover:-translate-y-1 transition-all duration-500">
+        VIEW JOURNAL
+        <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8599;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="border-t border-[#D1D1D6] bg-[#F4F4F2]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-14 md:py-20">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+      <div>
+        <a href="../index.html" aria-label="NXY ホームへ" class="inline-block hover:opacity-70 transition-opacity duration-500">
+          <svg class="h-8 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
+            <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+            <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
+            <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+          </svg>
+        </a>
+        <p class="mt-4 text-[12px] tracking-[0.14em] text-[#666666] leading-[2]">
+          ―― 誰もが、生まれてきてよかったと感じるセックスを。
+        </p>
+      </div>
+
+      <nav aria-label="フッターナビゲーション">
+        <ul class="flex flex-wrap gap-x-8 gap-y-4 font-display text-[11px] tracking-[0.22em] text-[#666666]">
+          <li><a href="../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li><a href="../index.html#research" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
+          <li><a href="../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="../index.html#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-[#D1D1D6]">
+      <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">&copy; NXY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>

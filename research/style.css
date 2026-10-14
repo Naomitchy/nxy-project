@@ -1,0 +1,103 @@
+/* RESEARCH 配下の共通スタイル。index.html 本体とは独立して読み込む */
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Shippori Mincho', serif;
+  font-feature-settings: "palt" 1;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 900ms cubic-bezier(.16,1,.3,1), transform 900ms cubic-bezier(.16,1,.3,1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ---------- Editorial details ---------- */
+.rule-label::before {
+  content: '';
+  display: inline-block;
+  width: 2.75rem;
+  height: 1px;
+  background: #C00000;
+  vertical-align: middle;
+  margin-right: .9rem;
+}
+.vline { position: relative; }
+.vline::before {
+  content: '';
+  position: absolute; left: 0; top: .35em; bottom: .35em;
+  width: 1px; background: #C00000;
+}
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s cubic-bezier(.16,1,.3,1), color .3s ease;
+}
+.link-underline:hover { background-size: 100% 1px; }
+
+/* ---------- 本文 ---------- */
+/* 記事本文は読みやすさを優先して行長と行間を本体LPより広く取る */
+.prose-nxy { font-size: 16px; line-height: 2.2; font-weight: 300; color: rgba(28,28,30,.88); }
+.prose-nxy > * + * { margin-top: 1.6em; }
+.prose-nxy strong { font-weight: 600; color: #1C1C1E; }
+.prose-nxy a { color: #C00000; }
+.prose-nxy ul { list-style: none; }
+.prose-nxy ul > li { position: relative; padding-left: 1.4em; }
+.prose-nxy ul > li + li { margin-top: .7em; }
+.prose-nxy ul > li::before {
+  content: ''; position: absolute; left: 0; top: 1.05em;
+  width: .6em; height: 1px; background: #C00000;
+}
+
+/* 図版 */
+.figure-nxy { margin-top: 2.6em; margin-bottom: 2.6em; }
+.figure-nxy svg, .figure-nxy img { display: block; width: 100%; height: auto; }
+.figure-nxy figcaption {
+  margin-top: 1.1em; font-size: 12px; line-height: 1.9;
+  letter-spacing: .04em; color: #666666;
+}
+
+/* 比較表。狭い画面では親要素を横スクロールさせる */
+.table-nxy { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.9; }
+.table-nxy th,
+.table-nxy td {
+  border: 1px solid #D1D1D6; padding: .9em 1.1em;
+  text-align: left; vertical-align: top; font-weight: 300;
+}
+.table-nxy thead th {
+  background: #EFEFEC; font-weight: 500;
+  font-size: 13px; letter-spacing: .06em;
+}
+.table-nxy tbody th {
+  background: #F4F4F2; font-weight: 500;
+  white-space: nowrap;
+}
+
+/* 出典リスト */
+.refs { counter-reset: ref; }
+.refs li {
+  counter-increment: ref; position: relative; padding-left: 2.6em;
+  font-size: 13px; line-height: 2; color: rgba(28,28,30,.85);
+}
+.refs li + li { margin-top: 1em; }
+.refs li::before {
+  content: '[' counter(ref) ']';
+  position: absolute; left: 0; top: 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px; color: #C00000;
+}
+
+/* 目次 */
+.toc li + li { margin-top: .85em; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

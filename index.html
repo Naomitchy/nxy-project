@@ -165,10 +165,11 @@
         </svg>
       </a>
 
-      <nav class="hidden md:block" aria-label="メインナビゲーション">
-        <ul class="flex items-center gap-8 lg:gap-12 font-display text-[11px] lg:text-xs tracking-[0.22em] text-[#1C1C1E]">
+      <nav class="hidden lg:block" aria-label="メインナビゲーション">
+        <ul class="flex items-center gap-8 font-display text-xs tracking-[0.22em] text-[#1C1C1E]">
           <li><a href="#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
           <li><a href="#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
+          <li><a href="#research" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
           <li><a href="#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
           <li><a href="#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
           <li><a href="#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
@@ -179,7 +180,7 @@
       </nav>
 
       <button id="menu-toggle" type="button"
-              class="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-[7px] group"
+              class="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-[7px] group"
               aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
         <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-transform duration-500 ease-out"></span>
         <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-all duration-500 ease-out"></span>
@@ -189,15 +190,37 @@
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out bg-[#F4F4F2]/95 backdrop-blur-md border-t border-[#D1D1D6]/0">
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out bg-[#F4F4F2]/95 backdrop-blur-md border-t border-[#D1D1D6]/0">
     <nav aria-label="モバイルナビゲーション">
       <ul class="px-6 py-6 space-y-1 font-display text-sm tracking-[0.25em]">
-        <li><a href="#about" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">ABOUT</a></li>
-        <li><a href="#activities" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">ACTIVITIES</a></li>
-        <li><a href="#journal" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">JOURNAL</a></li>
-        <li><a href="#dialogue" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">DIALOGUE</a></li>
-        <li><a href="#profile" class="mobile-link block py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">PROFILE</a></li>
-        <li><a href="#contact" class="mobile-link block py-4 text-[#C00000] hover:opacity-70 transition-opacity">CONTACT</a></li>
+        <li><a href="#about" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">ABOUT</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">理念</span>
+        </a></li>
+        <li><a href="#activities" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">ACTIVITIES</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">活動</span>
+        </a></li>
+        <li><a href="#research" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">RESEARCH</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">研究記事</span>
+        </a></li>
+        <li><a href="#journal" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">JOURNAL</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">note</span>
+        </a></li>
+        <li><a href="#dialogue" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">DIALOGUE</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">対話の申込</span>
+        </a></li>
+        <li><a href="#profile" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">PROFILE</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">星野直道</span>
+        </a></li>
+        <li><a href="#contact" class="mobile-link flex items-baseline justify-between gap-6 py-4 text-[#C00000] hover:opacity-70 transition-opacity">
+          <span class="whitespace-nowrap">CONTACT</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em]">お問い合わせ</span>
+        </a></li>
       </ul>
     </nav>
   </div>
@@ -460,6 +483,124 @@
           </div>
         </dl>
       </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- =====================================================
+     RESEARCH
+====================================================== -->
+<section id="research" class="relative py-28 md:py-40 lg:py-48 scroll-mt-20">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <div class="reveal flex items-baseline gap-6 mb-14 md:mb-20">
+      <h2 class="font-display text-3xl md:text-5xl font-semibold tracking-[0.12em]">RESEARCH</h2>
+      <span class="flex-1 h-px bg-[#D1D1D6]"></span>
+    </div>
+
+    <div class="max-w-[44rem] mb-16 md:mb-20">
+      <p class="reveal text-lg md:text-2xl font-light tracking-[0.08em] mb-7">意見ではなく、典拠から。</p>
+      <p class="reveal text-[15px] leading-[2.2] font-light text-[#1C1C1E]/85">
+        進化生物学、人類学、社会学、心理学。各分野の論文と書籍にあたり、どこまでが分かっていて、どこからが分かっていないのかを一本ずつ整理した記事を公開します。
+      </p>
+    </div>
+
+    <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
+      <li class="reveal">
+        <a href="research/sexual-pleasure/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10">
+          <div class="sm:w-44 shrink-0">
+            <span class="font-display text-sm tracking-[0.2em] text-[#C00000]">01</span>
+            <p class="mt-2 text-[11px] tracking-[0.2em] text-[#666666]">構造：本能と制度の起源</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+              なぜ人間のセックスには、快楽が伴うのか
+            </h3>
+            <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+              「子を残すためのご褒美」では、ヒトの性行動の大半が説明できない。快楽は関係を維持する装置としても働いたのか。
+            </p>
+            <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">参考文献 9件　／　約 10 分</p>
+          </div>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="research/dating-apps/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10">
+          <div class="sm:w-44 shrink-0">
+            <span class="font-display text-sm tracking-[0.2em] text-[#C00000]">02</span>
+            <p class="mt-2 text-[11px] tracking-[0.2em] text-[#666666]">現状：選別と消費の地獄</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+              マッチングアプリの中で、なにが起こっているのか
+            </h3>
+            <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+              アプリは出会いの主要経路になった。その内部では注目が一方向に流れ、選択肢の多さは満足に結びつかない。
+            </p>
+            <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">参考文献 7件　／　約 11 分</p>
+          </div>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="research/compensated-dating/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10">
+          <div class="sm:w-44 shrink-0">
+            <span class="font-display text-sm tracking-[0.2em] text-[#C00000]">02</span>
+            <p class="mt-2 text-[11px] tracking-[0.2em] text-[#666666]">現状：選別と消費の地獄</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+              パパ活、援助交際。なぜ、名前を変えながら存在し続けるのか。
+            </h3>
+            <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+              風俗という制度化された経路があるのに、なぜその外側の形が残り続けるのか。是非ではなく構造から説明する。
+            </p>
+            <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">参考文献 8件　／　約 13 分</p>
+          </div>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="research/gender-categories/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10">
+          <div class="sm:w-44 shrink-0">
+            <span class="font-display text-sm tracking-[0.2em] text-[#C00000]">03</span>
+            <p class="mt-2 text-[11px] tracking-[0.2em] text-[#666666]">葛藤：生身の感情と抑圧</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+              「男」「女」と言った瞬間に、こぼれ落ちるもの
+            </h3>
+            <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+              心理的な性差の平均は d = 0.21。この大きさでは二つの分布は約9割重なる。平均差から、個人は推定できない。
+            </p>
+            <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">参考文献 8件　／　約 12 分</p>
+          </div>
+        </a>
+      </li>
+      <li class="reveal">
+        <a href="research/relationship-forms/" class="group flex flex-col sm:flex-row gap-4 sm:gap-10 py-8 md:py-10">
+          <div class="sm:w-44 shrink-0">
+            <span class="font-display text-sm tracking-[0.2em] text-[#C00000]">04</span>
+            <p class="mt-2 text-[11px] tracking-[0.2em] text-[#666666]">宣言：新しい関係性へ</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg md:text-xl font-medium leading-[1.8] tracking-[0.04em] mb-4 group-hover:text-[#C00000] transition-colors duration-500">
+              恋人は、ひとりでなければいけないのか
+            </h3>
+            <p class="text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-5">
+              関係の「形」は、うまくいくかどうかを予測しているのか。形による差は、ほとんど見つかっていない。
+            </p>
+            <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">参考文献 8件　／　約 13 分</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+
+    <div class="reveal mt-12 md:mt-16 flex justify-center">
+      <a href="research/"
+         class="group inline-flex items-center gap-5 border border-[#1C1C1E] px-10 md:px-14 py-5 font-display text-xs tracking-[0.28em]
+                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] hover:-translate-y-1 transition-all duration-500">
+        VIEW ALL RESEARCH
+        <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
+      </a>
     </div>
   </div>
 </section>
@@ -772,6 +913,7 @@
         <ul class="flex flex-wrap gap-x-8 gap-y-4 font-display text-[11px] tracking-[0.22em] text-[#666666]">
           <li><a href="#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
           <li><a href="#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
+          <li><a href="#research" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
           <li><a href="#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
           <li><a href="#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
           <li><a href="#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
@@ -1437,7 +1579,7 @@
       link.addEventListener('click', function () { setMenu(false); });
     });
     window.addEventListener('resize', function () {
-      if (window.innerWidth >= 768) setMenu(false);
+      if (window.innerWidth >= 1024) setMenu(false);
     });
   }
 
