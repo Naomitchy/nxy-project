@@ -28,7 +28,8 @@
       extend: {
         fontFamily: {
           display: ['"Cormorant Garamond"', 'serif'],
-          jp: ['"Shippori Mincho"', 'serif']
+          jp: ['"Shippori Mincho"', 'serif'],
+          cinzel: ['Cinzel', 'serif']
         },
         letterSpacing: {
           ultra: '0.42em'
@@ -144,10 +145,11 @@
     <div class="h-16 md:h-20 flex items-center justify-between">
 
       <a href="#hero" aria-label="NXY ホームへ" class="block hover:opacity-70 transition-opacity duration-500">
-        <svg class="h-6 md:h-7 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-          <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">N</text>
+        <!-- N/Y は赤 #C00000 と同じコントラスト比（約 5.9）に揃えて、X を埋没させない -->
+        <svg class="h-5 md:h-6 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
           <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
-          <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">Y</text>
+          <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
           <circle cx="53" cy="22" r="2.5" fill="#C00000" />
         </svg>
       </a>
@@ -266,9 +268,14 @@
           なぜ、セックスや婚姻には<br class="hidden sm:block" />これほど強いルールがあるのか？
         </h4>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
-          <p class="reveal">進化生物学の視点に立てば、かつて女性が単独で子育てをすることが生存困難だった時代、集団内での庇護や資源（食料）を獲得し、パートナーを引き留めるための適応戦略として「性的快楽」が機能したと言われている。</p>
-          <p class="reveal">さらに人類の歴史において、奪い合いや余計な争いを回避し、集団の秩序を保つために発明された社会システムこそが「一夫一婦制」であり「婚姻制度」だった。</p>
-          <p class="reveal">条件による値踏みも、枠組みによる縛りも、すべてはかつて人類が生存確率を上げるために編み出した「過去の最適解」に過ぎない。</p>
+          <p class="reveal">直立二足歩行を選び、未熟な状態で子どもを産むリスクを抱えた人類。</p>
+          <p class="reveal">避妊技術も社会福祉もなかった太古の時代、女性が単独で妊娠・出産・子育てをおこなうことは生命の危機に直結していた。</p>
+          <p class="reveal">パートナーに特定のインセンティブを与え、子育てのあいだ集団からの庇護や継続的な資源（食料と安全）を獲得し続けるための高度な適応戦略――それこそが、人類固有の「強い性的快楽」と感情的結びつきだったと言われている。</p>
+          <p class="reveal">一方で、集団内のオス同士によるメスの奪い合いや、血縁関係を巡る激しい争いは、群れ全体の存続を脅かす最大の懸念だった。</p>
+          <p class="reveal">そうした暴力や混乱を回避し、共有資源の分配と社会の秩序を保つために発明された人工的なシステムこそが「一夫一婦制」であり「婚姻制度」だったのだ。</p>
+          <p class="reveal">だが、考えてみてほしい。</p>
+          <p class="reveal">生存の危険が大幅に減り、個人の自立が可能になった現代において、私たちは未だに数万年前の「生き残るための本能プログラム」と、数百年前に作られた「社会維持のための契約」に無意識に支配されている。</p>
+          <p class="reveal">条件による値踏みも、枠組みによる縛りも、すべてはかつて過酷な自然界で人類が生存確率を極限まで上げるために編み出した、ただの「過去の最適解」の残像に過ぎない。</p>
         </div>
       </article>
 
@@ -314,21 +321,21 @@
       <div class="lg:col-span-8">
         <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
           <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group">
-            <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">N</span>
+            <span class="font-cinzel font-bold text-4xl md:text-5xl leading-none tracking-[-0.02em] text-[#5D5D5E] w-16 shrink-0">N</span>
             <div>
               <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">No / New</p>
               <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">既存の価値観・現代社会・構造への「NO」。そこから始まる「New（新しい関係性）」。</p>
             </div>
           </li>
           <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group" style="--reveal-delay:120ms">
-            <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">X</span>
+            <span class="font-cinzel font-bold text-4xl md:text-5xl leading-none tracking-[-0.02em] text-[#C00000] w-16 shrink-0">X</span>
             <div>
               <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">SEX / X Chromosome</p>
               <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">生身の身体の交わり、本能、そして生命の根源としての「SEX」と「X染色体」。</p>
             </div>
           </li>
           <li class="reveal py-8 md:py-10 flex flex-col sm:flex-row gap-5 sm:gap-10 group" style="--reveal-delay:240ms">
-            <span class="font-display text-4xl md:text-5xl leading-none text-[#C00000] w-16 shrink-0">Y</span>
+            <span class="font-cinzel font-bold text-4xl md:text-5xl leading-none tracking-[-0.02em] text-[#5D5D5E] w-16 shrink-0">Y</span>
             <div>
               <p class="font-medium tracking-[0.1em] text-base md:text-lg mb-3">INTIMACY / Y Chromosome</p>
               <p class="text-[15px] leading-[2.1] font-light text-[#1C1C1E]/85">身体の先にある心と存在の全肯定としての「INTIMACY」と「Y染色体」。</p>
@@ -487,7 +494,6 @@
             <p class="font-display text-[10px] tracking-[0.25em] text-[#666666] mb-5">THEMES ／ 扱うテーマ</p>
             <ul class="flex flex-wrap gap-x-3 gap-y-3 text-[13px] tracking-[0.04em]">
               <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">身体の感覚</li>
-              <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">これまでの性体験</li>
               <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">関係の中の力と不公平感</li>
               <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">避妊とお金</li>
               <li class="border border-[#D1D1D6] bg-[#F4F4F2] px-4 py-2">パートナー以外との関係</li>
@@ -712,9 +718,9 @@
       <div>
         <a href="#hero" aria-label="NXY ホームへ" class="inline-block hover:opacity-70 transition-opacity duration-500">
           <svg class="h-8 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-            <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">N</text>
+            <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
             <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
-            <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#1C1C1E" letter-spacing="-0.02em">Y</text>
+            <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
             <circle cx="53" cy="22" r="2.5" fill="#C00000" />
           </svg>
         </a>
@@ -1236,13 +1242,21 @@
       meta.appendChild(el('span', 'font-display text-[#C00000]', item.category));
       card.appendChild(meta);
 
-      card.appendChild(el('h3', 'text-lg md:text-xl font-medium leading-[1.85] tracking-[0.04em] mb-5 group-hover:text-[#C00000] transition-colors duration-500', item.title));
+      var title = el('h3', 'text-lg md:text-xl font-medium leading-[1.85] tracking-[0.04em] mb-5 group-hover:text-[#C00000] transition-colors duration-500');
+      var titleLink = el('a', 'link-underline', item.title);
+      titleLink.href = item.link;
+      titleLink.target = '_blank';
+      titleLink.rel = 'noopener noreferrer';
+      title.appendChild(titleLink);
+      card.appendChild(title);
+
       card.appendChild(el('p', 'text-[14px] leading-[2.05] font-light text-[#1C1C1E]/80 mb-8 flex-1', item.summary));
 
       var link = el('a', 'inline-flex items-center gap-3 font-display text-[11px] tracking-[0.25em] text-[#1C1C1E] hover:text-[#C00000] transition-colors duration-500', 'READ ON NOTE');
       link.href = item.link;
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', item.title + '（noteで読む）');
       var dash = el('span', 'inline-block w-8 h-px bg-current transition-all duration-500 group-hover:w-12');
       dash.setAttribute('aria-hidden', 'true');
       link.appendChild(dash);
