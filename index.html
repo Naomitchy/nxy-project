@@ -67,6 +67,15 @@
     backface-visibility: hidden;
   }
 
+  /* ---------- Hero 入場（スクロールではなくロードで発火） ---------- */
+  .hero-rise { opacity: 0; transform: translateY(0.5rem); }
+  .hero-ready .hero-rise {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 900ms cubic-bezier(.16,1,.3,1), transform 900ms cubic-bezier(.16,1,.3,1);
+    transition-delay: var(--hero-delay, 0ms);
+  }
+
   /* ---------- Editorial details ---------- */
   .rule-label::before {
     content: '';
@@ -124,12 +133,14 @@
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .hero-rise { opacity: 1 !important; transform: none !important; transition: none !important; }
     .scroll-cue span { animation: none; }
   }
 </style>
 <noscript>
   <style>
     .reveal { opacity: 1; transform: none; }
+    .hero-rise { opacity: 1; transform: none; }
     #puzzle-fallback { opacity: .5; }
   </style>
 </noscript>
@@ -213,15 +224,15 @@
   <div id="hero-content" class="relative z-20 w-full max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-24 lg:pt-32 lg:pb-20">
     <div class="text-right">
 
-      <p class="rule-label font-display text-xs md:text-base lg:text-lg tracking-[0.4em] text-[#C00000] mb-6 md:mb-8">
+      <p class="hero-rise rule-label font-display text-xs md:text-base lg:text-lg tracking-[0.4em] text-[#C00000] mb-6 md:mb-8" style="--hero-delay:220ms">
         NXY PROJECT
       </p>
 
-      <h1 class="font-display font-bold leading-[1.1] tracking-[0.02em] whitespace-nowrap text-[clamp(1.05rem,7.2vw,5.5rem)] text-[#1C1C1E]">
+      <h1 class="hero-rise font-display font-bold leading-[1.1] tracking-[0.02em] whitespace-nowrap text-[clamp(1.05rem,7.2vw,5.5rem)] text-[#1C1C1E]" style="--hero-delay:360ms">
         <span class="text-[#C00000]">N</span>O SE<span class="text-[#C00000]">X</span>, NO INTIMAC<span class="text-[#C00000]">Y</span>
       </h1>
 
-      <p class="mt-2 md:mt-3 whitespace-nowrap font-light tracking-[0.02em] text-[clamp(0.44rem,2.94vw,2.245rem)] text-[#1C1C1E]/90">
+      <p class="hero-rise mt-2 md:mt-3 whitespace-nowrap font-light tracking-[0.02em] text-[clamp(0.44rem,2.94vw,2.245rem)] text-[#1C1C1E]/90" style="--hero-delay:500ms">
         ―― 誰もが、生まれてきてよかったと感じるセックスを。
       </p>
     </div>
@@ -249,48 +260,76 @@
 
     <div class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%]">
 
-      <!-- 1 -->
+      <p class="reveal text-2xl md:text-4xl font-medium leading-[1.6] tracking-[0.04em] mb-20 md:mb-28">
+        人類が編み出した「最適解」の、<br class="hidden sm:block" />その先へ。
+      </p>
+
+      <!-- 01 -->
       <article class="mb-20 md:mb-28">
+        <p class="reveal flex items-baseline gap-4 mb-5">
+          <span class="font-display text-sm md:text-base tracking-[0.2em] text-[#C00000]">01</span>
+          <span class="text-[11px] md:text-xs tracking-[0.28em] text-[#666666]">構造：本能と制度の起源</span>
+        </p>
         <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
-          なぜ私たちは、<br class="hidden sm:block" />人を「スペック」で値踏みしてしまうのか？
+          なぜ、セックスや婚姻には<br class="hidden sm:block" />これほど強いルールがあるのか？
         </h3>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
-          <p class="reveal">年収、容姿、年齢。現代のマッチングアプリや婚活市場が提示するのは、人間を「スペック」で値踏みしあう巨大な取引市場だ。</p>
-          <p class="reveal">かつて社会や共同体が分散して引き受けていた生活のリスクは、いまや一組の夫婦という個人のセーフティネットに押し付けられている。</p>
-          <p class="reveal">その過酷な構造の中で、人々は生き残るために必死で相手の条件を求め、画面の向こうでは極端な不平等と選別が繰り返される。</p>
-          <p class="reveal">相手に選ばれるために、筋トレやダイエットをし、自分を着飾り、自分の「ダメ」だと思う性格や癖を隠す。</p>
-          <p class="reveal">スワイプが生む拒絶の連続や、費やしてきた時間への執着（サンクコスト）が自己肯定感を削り、「誰かと深く繋がる感覚」を徐々に、そして確実に奪っていく。</p>
-          <p class="reveal vline pl-6 md:pl-8 text-[#C00000] text-base md:text-lg tracking-[0.06em]">「ありのままの自分を愛してほしい」</p>
-          <p class="reveal">そう願うことすら、「わがままだ」「現実を見ろ」「あきらめろ」と世間はあなたを正そうとしてくる。</p>
-        </div>
-
-        <h4 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mt-14 md:mt-20 mb-8 md:mb-10">
-          なぜ、セックスや婚姻には<br class="hidden sm:block" />これほど強いルールがあるのか？
-        </h4>
-        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
-          <p class="reveal">直立二足歩行を選び、未熟な状態で子どもを産むリスクを抱えた人類。</p>
-          <p class="reveal">避妊技術も社会福祉もなかった太古の時代、女性が単独で妊娠・出産・子育てをおこなうことは生命の危機に直結していた。</p>
-          <p class="reveal">パートナーに特定のインセンティブを与え、子育てのあいだ集団からの庇護や継続的な資源（食料と安全）を獲得し続けるための高度な適応戦略――それこそが、人類固有の「強い性的快楽」と感情的結びつきだったと言われている。</p>
-          <p class="reveal">一方で、集団内のオス同士によるメスの奪い合いや、血縁関係を巡る激しい争いは、群れ全体の存続を脅かす最大の懸念だった。</p>
-          <p class="reveal">そうした暴力や混乱を回避し、共有資源の分配と社会の秩序を保つために発明された人工的なシステムこそが「一夫一婦制」であり「婚姻制度」だったのだ。</p>
-          <p class="reveal">だが、考えてみてほしい。</p>
-          <p class="reveal">生存の危険が大幅に減り、個人の自立が可能になった現代において、私たちは未だに数万年前の「生き残るための本能プログラム」と、数百年前に作られた「社会維持のための契約」に無意識に支配されている。</p>
-          <p class="reveal">条件による値踏みも、枠組みによる縛りも、すべてはかつて過酷な自然界で人類が生存確率を極限まで上げるために編み出した、ただの「過去の最適解」の残像に過ぎない。</p>
+          <p class="reveal">直立二足歩行を選び、未熟な状態で子どもを産むリスクを抱えた人類。避妊技術も社会福祉もなかった太古の時代、女性が単独で妊娠・出産・子育てをおこなうことは生命の危機に直結していた。</p>
+          <p class="reveal">パートナーにインセンティブを与え、子育てのあいだ集団からの庇護や継続的な資源（食料と安全）を獲得し続けるための高度な適応戦略――それこそが、人類固有の「強い性的快楽」と感情的結びつきだったと言われている。</p>
+          <p class="reveal">一方で、集団内のオス同士によるメスの奪い合いや、血縁関係を巡る激しい争いは、群れ全体の存続を脅かす最大の懸念だった。そうした暴力や混乱を回避し、共有資源の分配と社会の秩序を保つために発明された人工的なシステムこそが「一夫一婦制」であり「婚姻制度」だったのだ。</p>
+          <p class="reveal">条件による値踏みも、枠組みによる縛りも、すべてはかつて過酷な自然界で人類が生存確率を極限まで上げるために編み出した、ただの「過去の最適解」に過ぎない。</p>
         </div>
       </article>
 
-      <!-- 2 -->
+      <!-- 02 -->
       <article class="mb-20 md:mb-28">
+        <p class="reveal flex items-baseline gap-4 mb-5">
+          <span class="font-display text-sm md:text-base tracking-[0.2em] text-[#C00000]">02</span>
+          <span class="text-[11px] md:text-xs tracking-[0.28em] text-[#666666]">現状：選別と消費の地獄</span>
+        </p>
+        <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
+          「過去の最適解」と「現代の効率主義」が、<br class="hidden sm:block" />人を切り刻む。
+        </h3>
+        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
+          <p class="reveal">生存の危険が大幅に減った現代において、私たちは未だに数万年前の「生き残るための本能プログラム」に無意識に支配されている。そして今、その本能を最も過酷な形で増幅しているのが、現代のマッチングアプリだ。</p>
+          <p class="reveal">年収、身長、職業、見た目――本来は生き残るための指標だった「条件」がアルゴリズムでデータベース化され、人はまるでカードのように選別され、消費されていく。</p>
+          <p class="reveal">相手に選ばれるために、筋トレやダイエットをし、自分を着飾り、自分の「ダメ」だと思う性格や癖を隠す。スワイプが生む拒絶の連続や、費やしてきた時間への執着（サンクコスト）が自己肯定感を削り、「誰かと深く繋がる感覚」を徐々に、そして確実に奪っていく。</p>
+          <p class="reveal vline pl-6 md:pl-8 text-[#C00000] text-base md:text-lg tracking-[0.06em]">「ありのままの自分を愛してほしい」</p>
+          <p class="reveal">そう願うことすら、「わがままだ」「現実を見ろ」「あきらめろ」と世間はあなたを正そうとしてくる。</p>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="mb-20 md:mb-28">
+        <p class="reveal flex items-baseline gap-4 mb-5">
+          <span class="font-display text-sm md:text-base tracking-[0.2em] text-[#C00000]">03</span>
+          <span class="text-[11px] md:text-xs tracking-[0.28em] text-[#666666]">葛藤：生身の感情と抑圧</span>
+        </p>
+        <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
+          その陰で、<br class="hidden sm:block" />生身の感情は置き去りのままだ。
+        </h3>
+        <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
+          <p class="reveal">女性は、今なお色濃く残る男性優位の社会構造に違和感を抱き、向けられる無遠慮な性的な目線に脅かされ、身を固くしている。</p>
+          <p class="reveal">一方で男性は、惹かれあいたい・承認されたいと願うほどに、己の内に渦巻く性欲を抑え込み、「加害者」にならぬよう社会的ルールに従って必死に我慢を重ねている。「この本能を自由に消し去れたら、どんなに楽だろう」と罪悪感を抱えながら。</p>
+          <p class="reveal">私たちは、どちらか一方の立場を糾弾したいわけではない。裁判のように善悪を裁き、誰かを打ち負かしても、この歪みは解決しないからだ。私たちは、アプリや社会構造によって生まれたこのすれ違いと痛みを、なきものにして笑い飛ばすような嘘をつきたくないのだ。</p>
+          <p class="reveal">便宜上「男性」「女性」という主語で語ってはいるが、本来、人の感性の高さや心の境界線、抱える思い込みはひとりひとり千差万別であり、画一的なラベルで括れるものではない。にもかかわらず、条件や記号で大括りに語る方が簡単だからこそ、私たちは互いを理解した気になり、孤独を深めてしまう。</p>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="mb-20 md:mb-28">
+        <p class="reveal flex items-baseline gap-4 mb-5">
+          <span class="font-display text-sm md:text-base tracking-[0.2em] text-[#C00000]">04</span>
+          <span class="text-[11px] md:text-xs tracking-[0.28em] text-[#666666]">宣言：未知の関係性を二人で創り出す「新しい進化」へ</span>
+        </p>
         <h3 class="reveal text-xl md:text-3xl font-medium leading-[1.7] tracking-[0.04em] mb-8 md:mb-10">
           関係性の答えは、<br class="hidden sm:block" />本当に「自分の中」にあるのだろうか？
         </h3>
         <div class="space-y-6 text-[15px] md:text-base leading-[2.2] text-[#1C1C1E]/85 font-light">
-          <p class="reveal">だが、問いかけたい。</p>
-          <p class="reveal">DNAに刻まれた古代の生存本能や、過去現在の社会の仕組みに従い続けることが、いまの私たちを本当に幸せにしているだろうか。</p>
+          <p class="reveal">だが、問いかけたい。DNAに刻まれた古代の生存本能や、過去現在の社会の仕組みに従い続けることが、いまの私たちを本当に幸せにしているだろうか。</p>
           <p class="reveal">関係性の答えは、自分の頭の中（内面）をどれだけ掘り下げても見つからない。世間が提示する「正解のカップル像」にも存在しない。</p>
           <p class="reveal">答えはいつだって、一対一で向き合った「あなたと相手のあいだ」にしかなく、二人だけのユニークな形を泥臭く探求していくプロセスの中にしか存在しないのだ。</p>
-          <p class="reveal">私たちは、遺伝子の命令に従うだけの生物ではない。</p>
-          <p class="reveal">本能や世間の奴隷になるのをやめ、未知の関係性を二人で創り出していく「新しい進化」の渦中にいる。</p>
+          <p class="reveal">私たちは、遺伝子の命令に従うだけの生物ではない。本能や世間の奴隷になるのをやめ、未知の関係性を二人で創り出していく「新しい進化」の渦中にいる。</p>
         </div>
       </article>
     </div>
@@ -961,18 +1000,20 @@
     var th = h / rows;
     var cx = (cols - 1) / 2;
     var cy = (rows - 1) / 2;
+    // ドリフトで継ぎ目が開かないよう、各片を四辺に広げて常に重ねておく
+    var pad = 7;
 
     for (var r = 0; r < rows; r++) {
       for (var c = 0; c < cols; c++) {
         var el = document.createElement('div');
         el.className = 'puzzle-tile';
-        el.style.left   = (c * tw) + 'px';
-        el.style.top    = (r * th) + 'px';
-        el.style.width  = Math.ceil(tw) + 'px';
-        el.style.height = Math.ceil(th) + 'px';
+        el.style.left   = (c * tw - pad) + 'px';
+        el.style.top    = (r * th - pad) + 'px';
+        el.style.width  = Math.ceil(tw + pad * 2) + 'px';
+        el.style.height = Math.ceil(th + pad * 2) + 'px';
         el.style.backgroundImage = "url('" + IMG_SRC + "')";
         el.style.backgroundSize  = bgW + 'px ' + bgH + 'px';
-        el.style.backgroundPosition = (ox - c * tw) + 'px ' + (oy - r * th) + 'px';
+        el.style.backgroundPosition = (ox - c * tw + pad) + 'px ' + (oy - r * th + pad) + 'px';
 
         var seed = r * cols + c + 1;
         var rndA = seededRandom(seed);
@@ -993,12 +1034,20 @@
           lag: 0.42 + dist * 0.58,        // 外側ほど早く外れる
           fade: 0.55 + rndB * 0.45,
           px: (rndA - 0.5) * 26,          // ポインタ追従量
-          py: (rndC - 0.5) * 22
+          py: (rndC - 0.5) * 22,
+          ph: c * 0.9 + r * 0.7          // ドリフトの位相（位置由来）
         });
         layer.appendChild(el);
       }
     }
     if (fallback) fallback.style.opacity = '0';
+
+    // リサイズで再生成されても入場は繰り返さない
+    if (!introPlayed) {
+      introPlayed = true;
+      introDone = false;
+      introStart = 0;
+    }
   }
 
   var scrollP  = 0;   // 0〜1：スクロール解体進行度
@@ -1006,31 +1055,61 @@
   var curP = 0, curPX = 0, curPY = 0;
   var rafId = null;
 
+  // 入場演出：やや散った状態から「はまる」方向へ。解体の逆再生にあたる。
+  var INTRO_FROM = 0.34;
+  var INTRO_MS   = 2400;
+  var introStart = 0;
+  var introDone  = true;    // タイル生成後に発火させる
+  var introPlayed = false;
+
+  function smoothstep(v) { return v * v * (3 - 2 * v); }
+
   function readScroll() {
     var hh = hero ? hero.offsetHeight : window.innerHeight;
     scrollP = Math.min(1, Math.max(0, window.pageYOffset / (hh * 0.92)));
   }
 
-  function renderHero() {
+  function renderHero(now) {
     curP  += (scrollP  - curP)  * 0.09;
     curPX += (pointerX - curPX) * 0.07;
     curPY += (pointerY - curPY) * 0.07;
 
-    var p = curP;
-    var ease = p * p * (3 - 2 * p); // smoothstep
+    var intro = 0;
+    if (!introDone) {
+      if (!introStart) introStart = now;
+      var e = Math.min(1, (now - introStart) / INTRO_MS);
+      intro = INTRO_FROM * Math.pow(1 - e, 2);
+      if (e >= 1) introDone = true;
+    }
 
-    for (var i = 0; i < tiles.length; i++) {
-      var t = tiles[i];
-      var local = Math.min(1, ease * t.lag * 1.35);
-      // ポインタ量は解体前ほど控えめに効かせ、静かな予兆をつくる
-      var hover = (1 - local * 0.65);
-      var x = t.dx * local + t.px * curPX * hover;
-      var y = t.dy * local + t.py * curPY * hover;
-      t.el.style.transform =
-        'translate3d(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,0) rotate(' +
-        (t.rot * local).toFixed(2) + 'deg) scale(' + (1 + 0.18 * local).toFixed(3) + ')';
-      t.el.style.opacity = Math.max(0, 1 - local * t.fade * 1.35).toFixed(3);
-      t.el.style.filter  = 'blur(' + (t.blur * local).toFixed(2) + 'px)';
+    // 背景は「スクロール＋入場」、文字はスクロールのみ（入場は CSS 側で処理）
+    // 入場量は smoothstep の後段に足す。手前で足すと減衰が指数的に速くなり尺が効かない。
+    var contentEase = smoothstep(curP);
+    var ease = Math.min(1, contentEase + intro);
+
+    // アンビエントのゆらぎ。位相を位置から決めて隣接片の差を押さえ、継ぎ目が大きく開かないようにしている。
+    var w1 = now * 0.000335;   // 周期約 18.8秒
+    var w2 = now * 0.000214;   // 周期約 29.4秒
+
+    // ヒーローを通り過ぎたら片の更新を止める
+    if (window.pageYOffset <= hero.offsetHeight + 80) {
+      for (var i = 0; i < tiles.length; i++) {
+        var t = tiles[i];
+        var local = Math.min(1, ease * t.lag * 1.35);
+        // ポインタ量は解体前ほど控えめに効かせ、静かな予兆をつくる
+        var hover = (1 - local * 0.65);
+        var calm  = 1 - local;   // 解体が進むほどドリフトは引っ込む
+        var x = t.dx * local + t.px * curPX * hover +
+                (Math.sin(w1 + t.ph) * 2.2 + Math.sin(w2 + t.ph * 0.6) * 1.2) * calm;
+        var y = t.dy * local + t.py * curPY * hover +
+                (Math.cos(w1 * 0.84 + t.ph) * 1.8 + Math.cos(w2 * 1.17 + t.ph * 0.8) * 1.0) * calm;
+        t.el.style.transform =
+          'translate3d(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px,0) rotate(' +
+          (t.rot * local).toFixed(2) + 'deg) scale(' + (1 + 0.18 * local).toFixed(3) + ')';
+        t.el.style.opacity = Math.max(0, 1 - local * t.fade * 1.35).toFixed(3);
+        var blurPx = t.blur * local;
+        t.el.style.filter = blurPx > 0.05 ? 'blur(' + blurPx.toFixed(2) + 'px)' : 'none';
+      }
     }
 
     if (stage) {
@@ -1038,15 +1117,20 @@
       stage.style.transform = 'scale(' + (1 + ease * 0.08).toFixed(4) + ')';
     }
     if (heroContent) {
-      heroContent.style.transform = 'translate3d(0,' + (-ease * 46).toFixed(2) + 'px,0)';
-      heroContent.style.opacity = Math.max(0, 1 - ease * 1.15).toFixed(3);
+      heroContent.style.transform = 'translate3d(0,' + (-contentEase * 46).toFixed(2) + 'px,0)';
+      heroContent.style.opacity = Math.max(0, 1 - contentEase * 1.15).toFixed(3);
     }
 
     rafId = window.requestAnimationFrame(renderHero);
   }
 
   function initHero() {
-    if (!hero || !layer) return;
+    if (!hero) return;
+
+    // 画像の読込やパズル生成の成否に関わらず、文字は必ず立ち上げる
+    window.requestAnimationFrame(function () { hero.classList.add('hero-ready'); });
+
+    if (!layer) return;
 
     var probe = new Image();
     probe.onload = function () {
