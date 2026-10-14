@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>条件で選ぶことは、うまくいっているのか ｜ RESEARCH ｜ NXY</title>
+<meta name="description" content="事前に挙げた「理想の条件」は、実際に会った相手への惹かれ方をほとんど予測しない。100以上の項目を測って機械学習にかけても、この二人が惹かれ合うかは予測できなかった。条件という物差しの性能を、実証研究から確かめる。" />
+<meta property="og:title" content="条件で選ぶことは、うまくいっているのか ｜ NXY" />
+<meta property="og:description" content="事前に挙げた条件は、実際の惹かれ方を予測しない。機械学習でも予測できなかった。" />
+
+<meta property="og:type" content="article" />
+<meta property="og:image" content="../../ogp.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          display: ['"Cormorant Garamond"', 'serif'],
+          jp: ['"Shippori Mincho"', 'serif'],
+          cinzel: ['Cinzel', 'serif']
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="../style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "条件で選ぶことは、うまくいっているのか",
+  "datePublished": "2026-10-14",
+  "dateModified": "2026-10-14",
+  "author": { "@type": "Person", "name": "星野 直道" },
+  "publisher": { "@type": "Organization", "name": "NXY" },
+  "inLanguage": "ja"
+}
+</script>
+</head>
+
+<body class="bg-[#F4F4F2] text-[#1C1C1E] antialiased">
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#F4F4F2]/80 border-b border-[#D1D1D6]/60">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="h-16 md:h-20 flex items-center justify-between">
+
+      <a href="../../index.html" aria-label="NXY ホームへ" class="block hover:opacity-70 transition-opacity duration-500">
+        <svg class="h-5 md:h-6 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
+          <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+          <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
+          <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+        </svg>
+      </a>
+
+      <nav aria-label="メインナビゲーション">
+        <ul class="flex items-center gap-6 md:gap-10 font-display text-[11px] lg:text-xs tracking-[0.22em]">
+          <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
+          <li class="hidden sm:block"><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li>
+            <a href="../../index.html#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#F4F4F2] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<main class="pt-16 md:pt-20">
+
+<article class="relative py-20 md:py-28 lg:py-32">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+
+    <!-- ===== 記事ヘッダー ===== -->
+    <header class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%] mb-16 md:mb-24">
+
+      <nav aria-label="パンくず" class="reveal font-display text-[11px] tracking-[0.22em] text-[#666666] mb-10 md:mb-14">
+        <a href="../../index.html" class="link-underline hover:text-[#C00000]">HOME</a>
+        <span class="mx-3" aria-hidden="true">/</span>
+        <a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a>
+        <span class="mx-3" aria-hidden="true">/</span>
+        <span class="text-[#1C1C1E]">R-07</span>
+      </nav>
+
+      <p class="reveal flex items-baseline gap-4 mb-6">
+        <span class="font-display text-sm md:text-base tracking-[0.2em] text-[#C00000]">02</span>
+        <span class="text-[11px] md:text-xs tracking-[0.28em] text-[#666666]">現状：選別と消費の地獄</span>
+      </p>
+
+      <h1 class="reveal text-2xl md:text-4xl font-medium leading-[1.65] tracking-[0.04em] mb-10">
+        条件で選ぶことは、<br class="hidden sm:block" />うまくいっているのか
+      </h1>
+
+      <dl class="reveal flex flex-wrap gap-x-8 gap-y-3 font-display text-[11px] tracking-[0.2em] text-[#666666] pb-10 border-b border-[#D1D1D6]">
+        <div class="flex gap-3"><dt>PUBLISHED</dt><dd><time datetime="2026-10-14">2026.10.14</time></dd></div>
+        <div class="flex gap-3"><dt>READ</dt><dd>約 12 分</dd></div>
+        <div class="flex gap-3"><dt>REFERENCES</dt><dd>8 件</dd></div>
+      </dl>
+    </header>
+
+
+    <div class="max-w-[46rem] mx-auto lg:mx-0 lg:ml-[18%]">
+
+      <!-- ===== ① 問い ===== -->
+      <section class="mb-16 md:mb-20">
+        <p class="reveal rule-label font-display text-[11px] tracking-[0.28em] text-[#C00000] mb-7">QUESTION</p>
+        <p class="reveal vline pl-6 md:pl-8 text-lg md:text-xl leading-[1.9] tracking-[0.04em] text-[#C00000]">
+          相手に求める条件をはっきりさせることは、実際に良い相手に出会うことにつながっているのか。
+        </p>
+      </section>
+
+      <!-- ===== ② 要約 ===== -->
+      <section class="reveal mb-16 md:mb-20 border border-[#D1D1D6] bg-[#EFEFEC] p-8 md:p-10">
+        <p class="font-display text-[11px] tracking-[0.28em] text-[#666666] mb-6">SUMMARY ／ 3行でわかる</p>
+        <ul class="prose-nxy text-[15px]">
+          <li>人が事前に挙げる「理想の条件」は、<strong>実際に会った相手への惹かれ方を、ほとんど予測しない</strong>。</li>
+          <li>100以上の項目を事前に測って機械学習にかけても、<strong>「この二人が特に惹かれ合うか」は予測できなかった</strong>。</li>
+          <li>条件が効きにくくなる条件も分かっている。<strong>相手を長く知っているほど、見た目の釣り合いは弱まる。</strong></li>
+        </ul>
+      </section>
+
+      <!-- ===== 目次 ===== -->
+      <nav class="reveal mb-16 md:mb-24 border-t border-b border-[#D1D1D6] py-8" aria-labelledby="toc-heading">
+        <p id="toc-heading" class="font-display text-[11px] tracking-[0.28em] text-[#666666] mb-6">CONTENTS</p>
+        <ol class="toc text-[14px] leading-[1.9] font-light">
+          <li><a href="#s1" class="link-underline hover:text-[#C00000]">1. 通説と、その説明力</a></li>
+          <li><a href="#s2" class="link-underline hover:text-[#C00000]">2. 数字で見ると、どうなっているのか</a></li>
+          <li><a href="#s3" class="link-underline hover:text-[#C00000]">3. NXYはこう読む</a></li>
+          <li><a href="#s4" class="link-underline hover:text-[#C00000]">4. この説明の限界と反証</a></li>
+          <li><a href="#refs" class="link-underline hover:text-[#C00000]">5. 出典</a></li>
+        </ol>
+      </nav>
+
+      <!-- ===== ③ 通説 ===== -->
+      <section id="s1" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          1. 通説と、その説明力
+        </h2>
+        <div class="prose-nxy">
+          <p class="reveal">年収、身長、年齢、学歴、職業、趣味、価値観。</p>
+          <p class="reveal">相手に求める条件をはっきりさせること。これは現代の出会いにおいて、ほとんど義務のように扱われている。プロフィール欄がそれを要求し、検索条件がそれを前提に作られている。</p>
+          <p class="reveal">本記事は、条件で選ぶことの<strong>是非を論じない</strong>。<strong>性能</strong>を見る。条件という物差しは、実際にうまく機能しているのか。</p>
+
+          <p class="reveal"><strong>通説A「条件を明確にすれば、ミスマッチが減る」。</strong>これは測れる。測った結果は、通説と違う。</p>
+          <p class="reveal"><strong>通説B「男は見た目、女は経済力」。</strong>これは<strong>半分正しい</strong>。ただし、正しくなる場面が限られている。その場面がどこかが、この記事の入口になる。</p>
+          <p class="reveal"><strong>通説C「条件で選ぶのは浅ましい」。</strong>これは評価であって説明ではない。本記事は扱わない。</p>
+        </div>
+      </section>
+
+      <!-- ===== ④ 数字 ===== -->
+      <section id="s2" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          2. 数字で見ると、どうなっているのか
+        </h2>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-1. 述べた条件と、実際の惹かれ方</h3>
+        <div class="prose-nxy">
+          <p class="reveal">Eastwick と Finkel は、スピードデートと追跡調査を組み合わせてこれを検証した<sup class="font-display text-[#C00000]">[1]</sup>。</p>
+          <p class="reveal">まず参加者に、理想の相手に求めるものを尋ねる。ここでは<strong>従来どおりの性差が再現された</strong>。男性は身体的魅力をより重視し、女性は稼得見込みをより重視すると答えた。</p>
+          <p class="reveal">次に、実際に会った相手への romantic interest を測る。そして、その相手の魅力度・稼得見込みとの関連を調べた。結果はこうである<sup class="font-display text-[#C00000]">[1]</sup>。</p>
+          <p class="reveal vline pl-6 md:pl-8 text-base md:text-lg tracking-[0.06em] text-[#C00000]">実際に会った相手への関心と、その相手の魅力度・稼得見込みとの関連には、性差がなかった。</p>
+          <p class="reveal"><strong>条件を述べることと、条件に従って惹かれることは、別の現象だった。</strong></p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-2. メタ分析で確かめる</h3>
+        <div class="prose-nxy">
+          <p class="reveal">これは1本の研究の偶然ではない。Eastwick らは、惹かれと関係性の研究を横断して<strong>97件</strong>を統合するメタ分析を行った<sup class="font-display text-[#C00000]">[2]</sup>。</p>
+          <ul>
+            <li class="reveal"><strong>身体的魅力</strong>は romantic evaluations を <strong>r ≈ .40</strong>（中〜強）で予測した。<strong>男女とも。</strong></li>
+            <li class="reveal"><strong>稼得見込み</strong>は <strong>r ≈ .10</strong>（小）だった。<strong>男女とも。</strong></li>
+            <li class="reveal">この相関の<strong>性差は r 差 .03</strong> にすぎず、<strong>一律に非有意</strong>だった。</li>
+          </ul>
+          <p class="reveal">では通説B「男は見た目、女は経済力」は、どこで正しいのか。この論文はこう整理している。男女は、<strong>仮想の相手を評価させる場面では</strong>、これらの質が評価に及ぼす影響の程度において確かに差を示す<sup class="font-display text-[#C00000]">[2]</sup>。</p>
+          <p class="reveal">分かれ目は、<strong>相手が仮想（hypothetical）か、実際に会った相手（live）か</strong>である<sup class="font-display text-[#C00000]">[2]</sup>。プロフィールを眺めている段階では性差が出る。会うと消える。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-3. 機械学習にかけても、予測できなかった</h3>
+        <div class="prose-nxy">
+          <p class="reveal">では、条件の測り方が雑なだけではないのか。項目を増やし、計算力を上げれば予測できるのではないか。</p>
+          <p class="reveal">Joel、Eastwick、Finkel はこれを正面から試した<sup class="font-display text-[#C00000]">[3]</sup>。2つのスピードデート研究で、交際相手のいない参加者に<strong>100を超える自己報告尺度</strong>に答えてもらう。過去の研究が配偶者選択に関連すると指摘してきた特性と選好を、片端から測った。そのうえで、全員が異性の参加者全員と4分間ずつ会う。</p>
+          <p class="reveal">集まったデータを<strong>ランダムフォレスト</strong>という機械学習手法にかけ、三つの成分を予測させた。</p>
+        </div>
+
+        <figure class="figure-nxy reveal">
+          <svg viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fig1-title fig1-desc">
+            <title id="fig1-title">事前の自己報告から予測できた割合</title>
+            <desc id="fig1-desc">機械学習は、誰かを好きになりやすさを4から18パーセント、誰かに好かれやすさを7から27パーセント予測できたが、特定の二人の組み合わせ固有の惹かれ合いは予測できなかった。</desc>
+
+            <line x1="270" y1="258" x2="650" y2="258" stroke="#D1D1D6" stroke-width="1" />
+            <line x1="270" y1="52" x2="270" y2="258" stroke="#D1D1D6" stroke-width="1" />
+            <text x="270" y="278" text-anchor="middle" font-size="12" fill="#666666">0%</text>
+            <text x="397" y="278" text-anchor="middle" font-size="12" fill="#666666">10%</text>
+            <text x="523" y="278" text-anchor="middle" font-size="12" fill="#666666">20%</text>
+            <text x="650" y="278" text-anchor="middle" font-size="12" fill="#666666">30%</text>
+            <line x1="397" y1="52" x2="397" y2="258" stroke="#D1D1D6" stroke-width="1" stroke-dasharray="2 4" />
+            <line x1="523" y1="52" x2="523" y2="258" stroke="#D1D1D6" stroke-width="1" stroke-dasharray="2 4" />
+            <line x1="650" y1="52" x2="650" y2="258" stroke="#D1D1D6" stroke-width="1" stroke-dasharray="2 4" />
+
+            <text x="250" y="78" text-anchor="end" font-size="13" fill="#1C1C1E">誰かを好きになりやすさ</text>
+            <text x="250" y="96" text-anchor="end" font-size="11" fill="#666666">本人の全般的な傾向</text>
+            <rect x="321" y="70" width="177" height="26" fill="#1C1C1E" opacity="0.75" />
+            <text x="510" y="89" font-size="13" fill="#666666" font-family="Cormorant Garamond, serif">4 – 18%</text>
+
+            <text x="250" y="148" text-anchor="end" font-size="13" fill="#1C1C1E">誰かに好かれやすさ</text>
+            <text x="250" y="166" text-anchor="end" font-size="11" fill="#666666">相手の全般的な傾向</text>
+            <rect x="359" y="140" width="253" height="26" fill="#1C1C1E" opacity="0.75" />
+            <text x="624" y="159" font-size="13" fill="#666666" font-family="Cormorant Garamond, serif">7 – 27%</text>
+
+            <text x="250" y="218" text-anchor="end" font-size="13" fill="#1C1C1E">この人を、特に好きになるか</text>
+            <text x="250" y="236" text-anchor="end" font-size="11" fill="#666666">二人の組み合わせに固有の部分</text>
+            <text x="282" y="229" font-size="15" fill="#C00000">予測できず</text>
+          </svg>
+          <figcaption>
+            図1　事前に報告された100以上の特性・選好から、ランダムフォレストが予測できた分散の割合。2つのスピードデート研究の結果。出典<sup class="font-display text-[#C00000]">[3]</sup>の報告値にもとづき作成。
+          </figcaption>
+        </figure>
+
+        <div class="prose-nxy">
+          <p class="reveal">結果はこうだった<sup class="font-display text-[#C00000]">[3]</sup>。</p>
+          <ul>
+            <li class="reveal"><strong>誰かを好きになりやすいか</strong>（その人の全般的な傾向）　<strong>4〜18%</strong> を予測できた</li>
+            <li class="reveal"><strong>誰かに好かれやすいか</strong>（相手の全般的な傾向）　<strong>7〜27%</strong> を予測できた</li>
+            <li class="reveal"><strong>特定の相手を、特に好きになるか</strong>　<strong>事前に報告されたどの特性・選好の組み合わせを使っても、予測できなかった</strong></li>
+          </ul>
+          <p class="reveal">「この人はモテる」「この人は惚れっぽい」は、ある程度まで当たる。だが<strong>「この二人は惹かれ合う」は、会う前のデータからは当たらなかった。</strong></p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-4. 条件が効きにくくなる条件</h3>
+        <div class="prose-nxy">
+          <p class="reveal">もうひとつ、角度の違う研究がある。Hunt、Eastwick、Finkel は 167組のカップルを調べ、<strong>交際を始める前にどれくらい相手を知っていたか</strong>と、<strong>二人の外見の釣り合い</strong>の関係を見た<sup class="font-display text-[#C00000]">[4]</sup>。</p>
+          <p class="reveal">背景にある考え方はこうである。競争が働くのは、<strong>「誰が望ましいか」について人々の見解が一致している範囲まで</strong>である。そして見解の一致は、知り合って間もないときほど強い<sup class="font-display text-[#C00000]">[4]</sup>。</p>
+          <p class="reveal">結果は予測どおりだった。<strong>知り合ってから交際を始めるまでの期間が短いカップルほど、そして交際前に友人でなかったカップルほど、外見の釣り合いが強かった</strong><sup class="font-display text-[#C00000]">[4]</sup>。</p>
+          <p class="reveal vline pl-6 md:pl-8 text-base md:text-lg tracking-[0.06em] text-[#C00000]">相手を長く知っているほど、見た目という条件の支配力は弱まる。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mt-12 mb-6">2-5. ただし、人は条件で選んではいる</h3>
+        <div class="prose-nxy">
+          <p class="reveal">誤解を避けるために、逆向きの証拠も置いておく。</p>
+          <p class="reveal">Bruch と Newman がオンラインの出会いの大規模データを分析したところ、人々の行動には<strong>望ましさの階層に沿った追求</strong>がはっきり現れていた<sup class="font-display text-[#C00000]">[5]</sup>。自分より望ましいとされる相手へメッセージを送る傾向が、構造として観察される。</p>
+          <p class="reveal">つまり<strong>人は条件で選んでいないわけではない。選んでいる。</strong>本記事が示しているのは別のことだ。<strong>選んだ条件が、実際の惹かれ方を当てていない</strong>ということである。</p>
+        </div>
+      </section>
+
+      <!-- ===== ⑤ NXYの読み方 ===== -->
+      <section id="s3" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          3. NXYはこう読む
+        </h2>
+
+        <div class="reveal border-l-2 border-[#D1D1D6] pl-6 md:pl-8 mb-10">
+          <p class="text-[13px] leading-[2] text-[#666666]">
+            ここから先は解釈です。前節までの記述とは性質が異なります。
+          </p>
+        </div>
+
+        <div class="prose-nxy">
+          <p class="reveal">問いへの答えは、こうなる。<strong>条件は、相手を選ぶ道具としては、うまく機能していない。</strong></p>
+          <p class="reveal">このことから、三つ読み取れる。</p>
+
+          <p class="reveal"><strong>ひとつめ。条件は、選ぶための道具ではなく、自分を説明するための言葉として働いている。</strong><br />述べた理想には性差がはっきり出るのに、実際の惹かれ方には出ない<sup class="font-display text-[#C00000]">[1]</sup><sup class="font-display text-[#C00000]">[2]</sup>。この落差は、<strong>条件を言葉にする行為が、相手を探す作業ではなく、自分がどういう人間かを示す作業になっている</strong>ことを示唆する。「年収は気にしません」も「身長は高いほうが」も、まず自分についての表明である。</p>
+
+          <p class="reveal"><strong>ふたつめ。条件が効くのは、相手がまだ情報でしかないあいだだけである。</strong><br />性差は仮想の相手に対しては出て、実際に会うと消える<sup class="font-display text-[#C00000]">[2]</sup>。外見の釣り合いは、短く知って始めた関係では強く、長く知ってから始めた関係では弱い<sup class="font-display text-[#C00000]">[4]</sup>。<strong>条件の支配力は、相手についての情報量と反比例している。</strong></p>
+          <p class="reveal">アプリは、まさに<strong>情報量が最小の状態で判断させる装置</strong>である。条件がいちばん強く効く場所に、出会いの入口が置かれている。</p>
+
+          <p class="reveal"><strong>みっつめ。予測できなかったのは、データが足りないからではない。</strong><br />100を超える項目を測り、機械学習を使っても、二人のあいだに固有の部分は予測できなかった<sup class="font-display text-[#C00000]">[3]</sup>。<strong>測り足りなかったのではなく、会う前にはまだ存在していなかった</strong>と読むほうが自然だ。</p>
+          <p class="reveal">このサイトでは別の記事で、関係の質を最もよく予測するのは個人の特性でも相手の特性でもなく、<strong>その関係に固有の体験</strong>だったという研究を紹介した<sup class="font-display text-[#C00000]">[7]</sup>。惹かれ合いの入口でも、続いていく関係の質でも、<strong>同じ場所に答えがある</strong>ことになる。</p>
+
+          <p class="reveal vline pl-6 md:pl-8 text-base md:text-lg tracking-[0.06em] text-[#C00000]">条件は、会う前の自分を語る。会ったあとの二人は、別のところで決まっている。</p>
+
+          <p class="reveal">このサイトは、条件や記号で大きく括るほうが簡単だからこそ、私たちは互いを理解した気になり、孤独を深めてしまう、と書いてきた。<strong>実証研究の側から言えることは、もう少し具体的である。</strong>括ることが冷たいから問題なのではない。<strong>括っても当たらないから問題なのだ。</strong></p>
+        </div>
+      </section>
+
+      <!-- ===== ⑥ 限界と反証 ===== -->
+      <section id="s4" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          4. この説明の限界と反証
+        </h2>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">「条件を考えるな」とは言っていない</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">本記事が示したのは、<strong>事前に述べた条件が実際の惹かれ方を予測しない</strong>ということだけである。安全や生活設計に関わる条件を手放すべきだ、という話ではまったくない。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">見た目は、実際に効いている</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">メタ分析では、身体的魅力は <strong>r ≈ .40</strong> で romantic evaluations を予測していた<sup class="font-display text-[#C00000]">[2]</sup>。これは小さくない。<strong>「条件は何も効かない」ではない。</strong>効くものと効かないものがあり、そして<strong>効く部分に男女差がなかった</strong>、というのが正確な要約である。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">スピードデートは、現実の出会いではない</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">2-1 と 2-3 の根拠は、いずれも<strong>4分間の初対面</strong>を単位とする研究である<sup class="font-display text-[#C00000]">[1]</sup><sup class="font-display text-[#C00000]">[3]</sup>。測っているのは<strong>初期の惹かれ</strong>であって、長期的な相性ではない。時間をかけて確かめる場面で条件がどう働くかは、別に検証が要る。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">理想の測り方に依存している</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">メタ分析自身が、<strong>理想の測り方を変えれば予測力が上がる文脈がある</strong>と指摘している<sup class="font-display text-[#C00000]">[2]</sup>。本記事が扱ったのは「条件を列挙させる」という、もっとも普及した測り方の性能である。<strong>すべての測り方が無力だと証明されたわけではない。</strong></p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">相関であって、因果ではない</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">2-4 で引いた研究は横断的なものである<sup class="font-display text-[#C00000]">[4]</sup>。<strong>長く知り合ったから釣り合いが弱まったのか、釣り合いにこだわらない人が長い付き合いから交際に入りやすいのか</strong>は、このデータでは区別できない。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">アルゴリズムの主張は、検証できない</h3>
+        <div class="prose-nxy mb-12">
+          <p class="reveal">マッチングサービスの相性アルゴリズムについては、その有効性を独立に検証できる形で公開した例が乏しいと指摘されてきた<sup class="font-display text-[#C00000]">[6]</sup>。本記事は<strong>「アルゴリズムは効かない」と証明したのではなく、「効くという証拠が示されていない」</strong>という状態を述べている。</p>
+        </div>
+
+        <h3 class="reveal text-base md:text-lg font-medium tracking-[0.06em] mb-6">参加者の偏り</h3>
+        <div class="prose-nxy">
+          <p class="reveal">ここで引いた研究の多くは、西洋・教育水準が高く・産業化され・裕福で・民主的な社会の参加者に偏っている<sup class="font-display text-[#C00000]">[8]</sup>。<strong>条件の重みづけは文化によって変わりうる。</strong>日本で同じ結果が再現されるかどうかは、別に確かめる必要がある。</p>
+        </div>
+      </section>
+
+      <!-- ===== ⑦ 出典 ===== -->
+      <section id="refs" class="mb-16 md:mb-24 scroll-mt-28">
+        <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
+          5. 出典
+        </h2>
+
+        <p class="reveal text-[13px] leading-[2] text-[#666666] mb-8">
+          書式：著者（発行年）「論文名」『媒体名』巻(号), 頁. DOI.
+        </p>
+
+        <ol class="refs reveal">
+          <li>Eastwick, P. W., &amp; Finkel, E. J.（2008）「Sex differences in mate preferences revisited: Do people know what they initially desire in a romantic partner?」『Journal of Personality and Social Psychology』94(2), 245–264. <a href="https://doi.org/10.1037/0022-3514.94.2.245" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1037/0022-3514.94.2.245</a></li>
+          <li>Eastwick, P. W., Luchies, L. B., Finkel, E. J., &amp; Hunt, L. L.（2014）「The predictive validity of ideal partner preferences: A review and meta-analysis」『Psychological Bulletin』140(3), 623–665. <a href="https://doi.org/10.1037/a0032432" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1037/a0032432</a></li>
+          <li>Joel, S., Eastwick, P. W., &amp; Finkel, E. J.（2017）「Is Romantic Desire Predictable? Machine Learning Applied to Initial Romantic Attraction」『Psychological Science』28(10). <a href="https://doi.org/10.1177/0956797617714580" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1177/0956797617714580</a></li>
+          <li>Hunt, L. L., Eastwick, P. W., &amp; Finkel, E. J.（2015）「Leveling the Playing Field: Longer Acquaintance Predicts Reduced Assortative Mating on Attractiveness」『Psychological Science』26(7). <a href="https://doi.org/10.1177/0956797615579273" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1177/0956797615579273</a></li>
+          <li>Bruch, E. E., &amp; Newman, M. E. J.（2018）「Aspirational pursuit of mates in online dating markets」『Science Advances』4(8), eaap9815. <a href="https://doi.org/10.1126/sciadv.aap9815" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1126/sciadv.aap9815</a></li>
+          <li>Finkel, E. J., Eastwick, P. W., Karney, B. R., Reis, H. T., &amp; Sprecher, S.（2012）「Online Dating: A Critical Analysis From the Perspective of Psychological Science」『Psychological Science in the Public Interest』13(1), 3–66. <a href="https://doi.org/10.1177/1529100612436522" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1177/1529100612436522</a></li>
+          <li>Joel, S., Eastwick, P. W., Allison, C. J., Arriaga, X. B., Baker, Z. G., Bar-Kalifa, E., ほか（2020）「Machine learning uncovers the most robust self-report predictors of relationship quality across 43 longitudinal couples studies」『Proceedings of the National Academy of Sciences』117(32), 19061–19071. <a href="https://doi.org/10.1073/pnas.1917036117" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1073/pnas.1917036117</a></li>
+          <li>Henrich, J., Heine, S. J., &amp; Norenzayan, A.（2010）「The weirdest people in the world?」『Behavioral and Brain Sciences』33(2–3), 61–83（討論 83–135）. <a href="https://doi.org/10.1017/S0140525X0999152X" target="_blank" rel="noopener noreferrer" class="link-underline">doi:10.1017/S0140525X0999152X</a></li>
+        </ol>
+
+        <p class="reveal mt-8 text-[12px] leading-[2] text-[#666666]">
+          最終アクセス日：2026.10.14　／　誤りのご指摘は
+          <a href="../../index.html#contact" class="text-[#C00000] link-underline">お問い合わせ</a>
+          からお寄せください。確認のうえ本文を訂正し、訂正履歴を残します。
+        </p>
+      </section>
+
+      <!-- ===== ⑧ 関連記事 ===== -->
+      <section>
+        <p class="reveal font-display text-[11px] tracking-[0.28em] text-[#666666] mb-8">RELATED</p>
+        <ul class="divide-y divide-[#D1D1D6] border-t border-b border-[#D1D1D6]">
+          <li class="reveal">
+            <a href="../dating-apps/" class="group flex items-baseline gap-6 py-7">
+              <span class="font-display text-[11px] tracking-[0.2em] text-[#666666] shrink-0">R-02</span>
+              <span class="text-[15px] leading-[1.9] group-hover:text-[#C00000] transition-colors duration-500">マッチングアプリの中で、なにが起こっているのか</span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a href="../relationship-forms/" class="group flex items-baseline gap-6 py-7">
+              <span class="font-display text-[11px] tracking-[0.2em] text-[#666666] shrink-0">R-05</span>
+              <span class="text-[15px] leading-[1.9] group-hover:text-[#C00000] transition-colors duration-500">恋人は、ひとりでなければいけないのか</span>
+            </a>
+          </li>
+          <li class="reveal">
+            <a href="../" class="group flex items-baseline gap-6 py-7">
+              <span class="font-display text-[11px] tracking-[0.2em] text-[#666666] shrink-0">INDEX</span>
+              <span class="text-[15px] leading-[1.9] group-hover:text-[#C00000] transition-colors duration-500">RESEARCH 一覧へ</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+    </div>
+  </div>
+</article>
+
+
+<!-- =====================================================
+     CTA
+====================================================== -->
+<section class="relative py-20 md:py-28 bg-[#EFEFEC] border-t border-[#D1D1D6]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
+    <div class="max-w-[44rem]">
+      <p class="reveal text-lg md:text-xl font-light tracking-[0.06em] mb-10">
+        この問いを、誰かと最後まで話したことはありますか。
+      </p>
+      <a href="../../index.html#dialogue"
+         class="reveal group inline-flex items-center gap-5 border border-[#1C1C1E] px-10 md:px-14 py-5 font-display text-xs tracking-[0.28em]
+                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] hover:-translate-y-1 transition-all duration-500">
+        VIEW DIALOGUE
+        <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+<footer class="border-t border-[#D1D1D6] bg-[#F4F4F2]">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-14 md:py-20">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+      <div>
+        <a href="../../index.html" aria-label="NXY ホームへ" class="inline-block hover:opacity-70 transition-opacity duration-500">
+          <svg class="h-8 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
+            <text x="18" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#C00000" letter-spacing="-0.02em">X</text>
+            <text x="33.5" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">Y</text>
+            <circle cx="53" cy="22" r="2.5" fill="#C00000" />
+          </svg>
+        </a>
+        <p class="mt-4 text-[12px] tracking-[0.14em] text-[#666666] leading-[2]">
+          ―― 誰もが、生まれてきてよかったと感じるセックスを。
+        </p>
+      </div>
+
+      <nav aria-label="フッターナビゲーション">
+        <ul class="flex flex-wrap gap-x-8 gap-y-4 font-display text-[11px] tracking-[0.22em] text-[#666666]">
+          <li><a href="../../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li><a href="../../index.html#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
+          <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
+          <li><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="../../index.html#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
+          <li><a href="../../index.html#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
+          <li><a href="../../index.html#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-14 pt-8 border-t border-[#D1D1D6]">
+      <p class="font-display text-[11px] tracking-[0.2em] text-[#666666]">&copy; NXY All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('.reveal');
+
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('is-visible');
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+  targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+</body>
+</html>
