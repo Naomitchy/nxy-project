@@ -10,10 +10,14 @@
 <meta property="og:description" content="平均差は存在する。しかしそこから個人を推定することはできない。数字で確かめる。" />
 
 <meta property="og:type" content="article" />
-<meta property="og:image" content="../../ogp.png" />
+<meta property="og:url" content="https://nxy-project.com/research/gender-categories/" />
+<meta property="og:site_name" content="NXY" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:image" content="https://nxy-project.com/ogp.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://nxy-project.com/research/gender-categories/" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="../../favicon-192.png" />
@@ -48,17 +52,20 @@
   "dateModified": "2026-10-14",
   "author": { "@type": "Person", "name": "星野 直道" },
   "publisher": { "@type": "Organization", "name": "NXY" },
-  "inLanguage": "ja"
+  "inLanguage": "ja",
+  "url": "https://nxy-project.com/research/gender-categories/",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nxy-project.com/research/gender-categories/" },
+  "image": "https://nxy-project.com/ogp.png"
 }
 </script>
 </head>
 
-<body class="bg-[#F4F4F2] text-[#1C1C1E] antialiased">
+<body class="bg-[#FFFFFF] text-[#1C1C1E] antialiased">
 
 <!-- =====================================================
      HEADER
 ====================================================== -->
-<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#F4F4F2]/80 border-b border-[#D1D1D6]/60">
+<header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-[#FFFFFF]/80 border-b border-[#D1D1D6]/60">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
     <div class="h-16 md:h-20 flex items-center justify-between">
 
@@ -71,16 +78,61 @@
         </svg>
       </a>
 
-      <nav aria-label="メインナビゲーション">
-        <ul class="flex items-center gap-6 md:gap-10 font-display text-[11px] lg:text-xs tracking-[0.22em]">
+      <nav class="hidden lg:block" aria-label="メインナビゲーション">
+        <ul class="flex items-center gap-8 font-display text-xs tracking-[0.22em] text-[#1C1C1E]">
+          <li><a href="../../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+          <li><a href="../../index.html#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
           <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
-          <li class="hidden sm:block"><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+          <li><a href="../../index.html#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
           <li>
-            <a href="../../index.html#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#F4F4F2] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
+            <a href="../../index.html#contact" class="inline-block border border-[#C00000] text-[#C00000] px-5 py-2 hover:bg-[#C00000] hover:text-[#FFFFFF] transition-all duration-500 hover:-translate-y-[2px]">CONTACT</a>
           </li>
         </ul>
       </nav>
+
+      <button id="menu-toggle" type="button"
+              class="lg:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-[7px]"
+              aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-transform duration-500 ease-out"></span>
+        <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-all duration-500 ease-out"></span>
+        <span class="menu-bar block w-7 h-px bg-[#1C1C1E] transition-transform duration-500 ease-out"></span>
+      </button>
     </div>
+  </div>
+
+  <div id="mobile-menu" class="lg:hidden overflow-hidden max-h-0 transition-[max-height] duration-700 ease-in-out bg-[#FFFFFF]/95 backdrop-blur-md border-t border-[#D1D1D6]/0">
+    <nav aria-label="モバイルナビゲーション">
+      <ul class="px-6 py-6 space-y-1 font-display text-sm tracking-[0.25em]">
+        <li><a href="../../index.html#about" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">ABOUT</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">理念</span>
+        </a></li>
+        <li><a href="../../index.html#activities" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">ACTIVITIES</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">活動</span>
+        </a></li>
+        <li><a href="../" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">RESEARCH</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">研究記事</span>
+        </a></li>
+        <li><a href="../../index.html#journal" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">JOURNAL</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">note</span>
+        </a></li>
+        <li><a href="../../index.html#dialogue" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">DIALOGUE</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">対話の申込</span>
+        </a></li>
+        <li><a href="../../index.html#profile" class="mobile-link group flex items-baseline justify-between gap-6 py-4 border-b border-[#D1D1D6] hover:text-[#C00000] transition-colors">
+          <span class="whitespace-nowrap">PROFILE</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em] text-[#666666] group-hover:text-[#C00000] transition-colors">星野直道</span>
+        </a></li>
+        <li><a href="../../index.html#contact" class="mobile-link flex items-baseline justify-between gap-6 py-4 text-[#C00000] hover:opacity-70 transition-opacity">
+          <span class="whitespace-nowrap">CONTACT</span>
+          <span class="font-jp whitespace-nowrap text-[11px] tracking-[0.08em]">お問い合わせ</span>
+        </a></li>
+      </ul>
+    </nav>
   </div>
 </header>
 
@@ -129,7 +181,7 @@
       </section>
 
       <!-- ===== ② 要約 ===== -->
-      <section class="reveal mb-16 md:mb-20 border border-[#D1D1D6] bg-[#EFEFEC] p-8 md:p-10">
+      <section class="reveal mb-16 md:mb-20 border border-[#D1D1D6] bg-[#F7F7F6] p-8 md:p-10">
         <p class="font-display text-[11px] tracking-[0.28em] text-[#666666] mb-6">SUMMARY ／ 3行でわかる</p>
         <ul class="prose-nxy text-[15px]">
           <li>心理的な性差を統合すると、平均的な大きさは <strong>d = 0.21</strong>。106件のメタ分析をまとめた値である。</li>
@@ -337,7 +389,23 @@
         </div>
       </section>
 
-      <!-- ===== ⑦ 出典 ===== -->
+      <!-- ===== ⑦ シェア（JSが動く環境でのみ表示） ===== -->
+      <section id="share" class="mb-16 md:mb-24 hidden">
+        <p class="font-display text-[11px] tracking-[0.28em] text-[#666666] mb-8">SHARE</p>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-3">
+          <button type="button" id="share-native" class="hidden group items-center gap-4 border border-[#1C1C1E] px-7 py-4 font-display text-[11px] tracking-[0.28em] hover:bg-[#1C1C1E] hover:text-[#FFFFFF] transition-all duration-500">
+            SHARE
+            <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
+          </button>
+          <button type="button" id="share-copy" class="inline-flex items-center border border-[#D1D1D6] px-7 py-4 font-display text-[11px] tracking-[0.28em] hover:border-[#1C1C1E] transition-all duration-500">
+            <span id="share-copy-label">COPY TEXT</span>
+          </button>
+          <a id="share-x" href="https://x.com/intent/post" target="_blank" rel="noopener noreferrer" class="link-underline px-2 py-4 font-display text-[11px] tracking-[0.28em] text-[#666666] hover:text-[#C00000] transition-colors duration-500">POST ON X &#8599;</a>
+        </div>
+        <p class="mt-6 text-[12px] leading-[1.9] text-[#666666]">見出しと要点、リンクをまとめてコピーします。</p>
+      </section>
+
+      <!-- ===== ⑧ 出典 ===== -->
       <section id="refs" class="mb-16 md:mb-24 scroll-mt-28">
         <h2 class="reveal text-xl md:text-2xl font-medium leading-[1.7] tracking-[0.04em] mb-8">
           5. 出典
@@ -410,7 +478,7 @@
 <!-- =====================================================
      CTA
 ====================================================== -->
-<section class="relative py-20 md:py-28 bg-[#EFEFEC] border-t border-[#D1D1D6]">
+<section class="relative py-20 md:py-28 bg-[#F7F7F6] border-t border-[#D1D1D6]">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16">
     <div class="max-w-[44rem]">
       <p class="reveal text-lg md:text-xl font-light tracking-[0.06em] mb-10">
@@ -418,7 +486,7 @@
       </p>
       <a href="../../index.html#dialogue"
          class="reveal group inline-flex items-center gap-5 border border-[#1C1C1E] px-10 md:px-14 py-5 font-display text-xs tracking-[0.28em]
-                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#F4F4F2] hover:-translate-y-1 transition-all duration-500">
+                hover:bg-[#C00000] hover:border-[#C00000] hover:text-[#FFFFFF] hover:-translate-y-1 transition-all duration-500">
         VIEW DIALOGUE
         <span aria-hidden="true" class="transition-transform duration-500 group-hover:translate-x-1">&#8594;</span>
       </a>
@@ -432,10 +500,10 @@
 <!-- =====================================================
      FOOTER
 ====================================================== -->
-<footer class="border-t border-[#D1D1D6] bg-[#F4F4F2]">
+<footer class="border-t border-[#D1D1D6] bg-[#FFFFFF]">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-16 py-14 md:py-20">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-10">
-      <div>
+    <div class="flex flex-col md:flex-row md:justify-between gap-14 md:gap-16">
+      <div class="md:shrink-0">
         <a href="../../index.html" aria-label="NXY ホームへ" class="inline-block hover:opacity-70 transition-opacity duration-500">
           <svg class="h-8 w-auto" viewBox="0.5 8.1 55.25 19.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
             <text x="0" y="27" font-family="Cinzel, serif" font-size="26" font-weight="700" fill="#5D5D5E" letter-spacing="-0.02em">N</text>
@@ -449,16 +517,40 @@
         </p>
       </div>
 
-      <nav aria-label="フッターナビゲーション">
-        <ul class="flex flex-wrap gap-x-8 gap-y-4 font-display text-[11px] tracking-[0.22em] text-[#666666]">
-          <li><a href="../../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
-          <li><a href="../../index.html#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
-          <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
-          <li><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
-          <li><a href="../../index.html#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
-          <li><a href="../../index.html#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
-          <li><a href="../../index.html#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
-        </ul>
+      <nav aria-label="フッターナビゲーション" class="grid grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12 lg:gap-x-16">
+        <div>
+          <p class="font-display text-[10px] tracking-[0.28em] text-[#C00000] mb-5">SITE</p>
+          <ul class="space-y-3 font-display text-[11px] tracking-[0.22em] text-[#666666]">
+            <li><a href="../../index.html#about" class="link-underline hover:text-[#C00000]">ABOUT</a></li>
+            <li><a href="../../index.html#activities" class="link-underline hover:text-[#C00000]">ACTIVITIES</a></li>
+            <li><a href="../" class="link-underline hover:text-[#C00000]">RESEARCH</a></li>
+            <li><a href="../../index.html#journal" class="link-underline hover:text-[#C00000]">JOURNAL</a></li>
+            <li><a href="../../index.html#dialogue" class="link-underline hover:text-[#C00000]">DIALOGUE</a></li>
+            <li><a href="../../index.html#profile" class="link-underline hover:text-[#C00000]">PROFILE</a></li>
+            <li><a href="../../index.html#contact" class="link-underline hover:text-[#C00000]">CONTACT</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-display text-[10px] tracking-[0.28em] text-[#C00000] mb-5">RESEARCH</p>
+          <ul class="space-y-3 text-[12px] leading-[1.85] text-[#666666]">
+            <li><a href="../#ch01" class="link-underline hover:text-[#C00000]">01　なぜ、出会えないのか</a></li>
+            <li><a href="../#ch02" class="link-underline hover:text-[#C00000]">02　なぜ、続かないのか</a></li>
+            <li><a href="../#ch03" class="link-underline hover:text-[#C00000]">03　これは、ふつうなのか</a></li>
+            <li><a href="../#ch04" class="link-underline hover:text-[#C00000]">04　なぜ、この形なのか</a></li>
+          </ul>
+        </div>
+
+        <div class="col-span-2 lg:col-span-1">
+          <p class="font-display text-[10px] tracking-[0.28em] text-[#C00000] mb-5">EXTERNAL &amp; LEGAL</p>
+          <ul class="space-y-3 text-[12px] leading-[1.85] text-[#666666]">
+            <li>
+              <a href="https://note.com/gifted_holly763" target="_blank" rel="noopener noreferrer" class="font-display text-[11px] tracking-[0.22em] link-underline hover:text-[#C00000]">NOTE &#8599;</a>
+            </li>
+            <li><a href="../../index.html#tokusho" class="link-underline hover:text-[#C00000]">特定商取引法に基づく表記</a></li>
+            <li><a href="../../index.html#privacy" class="link-underline hover:text-[#C00000]">プライバシーポリシー</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
 
@@ -488,6 +580,102 @@
   }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
 
   targets.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  var toggle = document.getElementById('menu-toggle');
+  var menu   = document.getElementById('mobile-menu');
+  if (!toggle || !menu) return;
+
+  function setMenu(open) {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'メニューを閉じる' : 'メニューを開く');
+    menu.style.maxHeight = open ? menu.scrollHeight + 'px' : '0px';
+    var bars = toggle.querySelectorAll('.menu-bar');
+    if (bars.length === 3) {
+      bars[0].style.transform = open ? 'translateY(8px) rotate(45deg)' : '';
+      bars[1].style.opacity   = open ? '0' : '1';
+      bars[1].style.transform = open ? 'scaleX(.4)' : '';
+      bars[2].style.transform = open ? 'translateY(-8px) rotate(-45deg)' : '';
+    }
+  }
+
+  toggle.addEventListener('click', function () {
+    setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+  menu.querySelectorAll('.mobile-link').forEach(function (link) {
+    link.addEventListener('click', function () { setMenu(false); });
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 1024) setMenu(false);
+  });
+})();
+
+(function () {
+  'use strict';
+  var box = document.getElementById('share');
+  if (!box) return;
+
+  var h1 = document.querySelector('article h1');
+  var descMeta = document.querySelector('meta[property="og:description"]');
+  var urlMeta  = document.querySelector('meta[property="og:url"]');
+  var title = (h1 ? h1.textContent : document.title).replace(/\s+/g, ' ').trim();
+  var desc  = descMeta ? descMeta.getAttribute('content') : '';
+  var url   = urlMeta ? urlMeta.getAttribute('content') : location.href;
+  var body  = title + '\n\n' + desc;
+  var full  = body + '\n\n' + url;
+
+  box.classList.remove('hidden');
+
+  var x = document.getElementById('share-x');
+  if (x) x.href = 'https://x.com/intent/post?text=' + encodeURIComponent(body) + '&url=' + encodeURIComponent(url);
+
+  var nativeBtn = document.getElementById('share-native');
+  if (nativeBtn && navigator.share) {
+    nativeBtn.classList.remove('hidden');
+    nativeBtn.classList.add('inline-flex');
+    nativeBtn.addEventListener('click', function () {
+      navigator.share({ title: title, text: body, url: url }).catch(function () {});
+    });
+  }
+
+  var copyBtn = document.getElementById('share-copy');
+  var label   = document.getElementById('share-copy-label');
+  if (!copyBtn || !label) return;
+
+  function flash(msg) {
+    label.textContent = msg;
+    copyBtn.classList.add('border-[#C00000]', 'text-[#C00000]');
+    setTimeout(function () {
+      label.textContent = 'COPY TEXT';
+      copyBtn.classList.remove('border-[#C00000]', 'text-[#C00000]');
+    }, 2200);
+  }
+
+  function fallbackCopy() {
+    var ta = document.createElement('textarea');
+    ta.value = full;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.top = '-1000px';
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try { ok = document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    flash(ok ? 'COPIED' : 'COPY FAILED');
+  }
+
+  copyBtn.addEventListener('click', function () {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(full).then(function () { flash('COPIED'); }).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  });
 })();
 </script>
 </body>

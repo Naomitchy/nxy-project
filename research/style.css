@@ -72,11 +72,11 @@ body {
   text-align: left; vertical-align: top; font-weight: 300;
 }
 .table-nxy thead th {
-  background: #EFEFEC; font-weight: 500;
+  background: #F7F7F6; font-weight: 500;
   font-size: 13px; letter-spacing: .06em;
 }
 .table-nxy tbody th {
-  background: #F4F4F2; font-weight: 500;
+  background: #FFFFFF; font-weight: 500;
   white-space: nowrap;
 }
 
